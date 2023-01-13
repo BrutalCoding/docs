@@ -1,73 +1,41 @@
 <img width=250px src="https://atsign.dev/assets/img/atPlatform_logo_gray.svg?sanitize=true">
 
-# Sample README
+# Docs
 
-Open with intent - we welcome contributions - we want pull requests and to hear about issues.
+This repo contains all of our open-source developer documentation which syncs with [GitBook](https://www.gitbook.com/).
 
 ## Who is this for?
 
-The README should be addressed to somebody who's never seen this before.
-But also don't assume that they're a novice.
+Our goal is to make sure that this repo has the A -> Z of everything that you need to develop with the atPlatform.
 
-### Code user
+If you are a developer, this is for you! Come join us, and help us improve the content and experience. We are always learning from you.
 
-Does this repo publish to [pub.dev](https://pub.dev) or similar?
-In which case the code user just needs a pointer there - e.g. [at_client on pub.dev](https://pub.dev/packages/at_client)
+## What can you find in this repo?
 
-### Contributor
+If you are new to the atPlatform, learn about how the platform works and how this can make such a big difference for you by cutting down on time to develop and market applications.
 
-This is the person who we want working with us here.
-[CONTRIBUTING.md](CONTRIBUTING.md) is going to have the detailed guidance on how to setup their tools,
-tests and how to make a pull request.
+The site gives you all the tools, samples, examples and documentation needed to get started on the atPlatform and SDK. The site also provides access to the various communities where you can collaborate and talk to other developers working on the platform.
 
-## Why, What, How?
+## Visit the actual site
 
-### Why?
+> Coming Soon!
 
-What is the purpose of this project?
+For now, visit our existing site [here](https://docs.atsign.com/).
 
-### What?
+## How can you contribute?
 
-What is needed to get the project and its dependencies installed?
+If you think there should be a change made, or think there could be anything done better, feel free to open a pull request to the trunk branch!
 
-### How?
+Take a look at [CONTRIBUTING.md](CONTRIBUTING.md) for further instructions.
 
-How does this work? How is this used to fulfil its intended purpose?
+## Acknowledgement/Attribution
 
-## Checklist
+This project is supported by [GitBook](https://www.gitbook.com/)!
 
-### Writing
+## LICENSE
 
-Does the writing flow, with proper grammar and correct spelling?
-
-### Links
-
-Are the links to external resources correct?
-Are the links to other parts of the project correct
-(beware stuff carried over from previous repos where the
-project might have lived during earlier development)?
-
-### Description
-
-Has the Description field been filled out?
-
-### Acknowledgement/Attribution
-
-Have we correctly acknowledged the work of others (and their Trademarks etc.)
-where appropriate (per the conditions of their LICENSE?
-
-### LICENSE
-
-Which LICENSE are we using?  
-Is the LICENSE(.md) file present?  
-Does it have the correct dates, legal entities etc.?
+The contents of this repo is licensed with a [BSD 3-Clause License](LICENSE).
 
 ## Maintainers
 
-Who created this?  
-
-Do they have complete GitHub profiles?  
-
-How can they be contacted?  
-
-Who is going to respond to pull requests?  
+[XavierChanth](https://github.com/xavierchanth)
