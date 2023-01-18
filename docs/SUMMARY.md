@@ -4,5 +4,4 @@
 
 ## Get Started
 
-* [Start](get-started/start/README.md)
-  * [Test Sub Page](get-started/start/test-sub-page.md)
+* [Start](get-started/start.md)
