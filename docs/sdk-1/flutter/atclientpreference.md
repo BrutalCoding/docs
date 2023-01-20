@@ -1,6 +1,6 @@
 # AtClientPreference
 
-#### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 AtClientPreference is used to configure the preferences of an atPlatform application. It offers a variety of attributes to give a developer ultimate flexibility.
 
@@ -25,9 +25,9 @@ AtClientPreference is used to configure the preferences of an atPlatform applica
 
 For Local device paths we recommend the path\_provider package.
 
-### Usage <a href="#usage" id="usage"></a>
+## Usage <a href="#usage" id="usage"></a>
 
-```
+```dart
 Future<AtClientPreference> loadAtClientPreference() async {
  var dir = await getApplicationSupportDirectory();
  return AtClientPreference()

@@ -1,6 +1,6 @@
 # Onboarding
 
-### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 The atPlatform uses secret keys for authenticating an atSign as cryptographically secure replacement for usernames and passwords. To improve developer experience, the atPlatform offers the [at\_onboarding\_flutter](https://pub.dev/packages/at\_onboarding\_flutter) package which handles secure management of these secret keys. If you are developing a new atPlatform app, we recommend that you use [at\_app](https://pub.dev/packages/at\_app) which can create atPlatform app template that already contains an example of using the [at\_onboarding\_flutter](https://pub.dev/packages/at\_onboarding\_flutter) widget.
 
@@ -13,7 +13,7 @@ Once the onboarding widget is opened, the user can click one of the four options
 3. **Scan QR Code** - one-time activation: person has an unactivated atSign (no `.atKeys` file) but possess the QR code containing the cram secret
 4. **Activate atSign** one-time activation: person has an unactivated atSign (no `.atKeys` file) but possesses the `atSign` and access to the `email` associated with it to provide the OTP.
 
-### Installation <a href="#installation" id="installation"></a>
+## Installation <a href="#installation" id="installation"></a>
 
 The [at\_onboarding\_flutter](https://pub.dev/packages/at\_onboarding\_flutter) package provides a widget that can be used to onboard atSigns.
 
@@ -29,7 +29,7 @@ Note: Be sure to check the updated version on [pub.dev](https://pub.dev/).
 
 Also run `flutter pub get` to update your dependencies.
 
-```
+```yaml
 dependencies:
   flutter:
     sdk: flutter
@@ -38,11 +38,11 @@ dependencies:
   at_onboarding_flutter: ^5.0.5
 ```
 
-### Usage <a href="#usage" id="usage"></a>
+## Usage <a href="#usage" id="usage"></a>
 
 Simply call the `.onboard` method whenever you want your app to open the onboarding widget.
 
-```
+```dart
 AtOnboarding.onboard(
   context: context, // BuildContext
   config: AtOnboardingConfig(
@@ -68,7 +68,7 @@ Notes:
 
 The example below demonstrates the onboarding widget being opened upon pressing this `ElevatedButton` widget. Since the `.onboard` method returns a `AtOnboardingResult` object, we store it in a variable and use it to determine what to do next. If the onboarding process was successful, we move onto a different page using `Navigator`, otherwise, we display an error.
 
-```
+```dart
 ElevatedButton(
   child: const Text('Onboard an @sign'),
   onPressed: () async {

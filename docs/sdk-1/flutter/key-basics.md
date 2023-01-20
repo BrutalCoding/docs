@@ -1,10 +1,10 @@
 # Key Basics
 
-#### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 To store data, atPlatform utilizes a straightforward key-value method. A key serves as a unique identifier in key-value pairs.
 
-**AtKey Structure:**
+**AtKey Structure**
 
 | Attributes | Description                    | Return Type |
 | ---------- | ------------------------------ | ----------- |
@@ -15,11 +15,11 @@ To store data, atPlatform utilizes a straightforward key-value method. A key ser
 | metadata   |                                | Metadata    |
 | isRef      |                                | Bool        |
 
-#### Metadata <a href="#metadata" id="metadata"></a>
+### Metadata <a href="#metadata" id="metadata"></a>
 
 Metadata In AtKey allows you to add more aspects of AtKey. If you want your data to live for a given period of time, or if you want it to be born/deleted after a set amount of time, metaData can help you with that.
 
-**Metadata Structure:**
+**Metadata Structure**
 
 | Attributes      | Capabilities | Return Type |
 | --------------- | ------------ | ----------- |
@@ -41,7 +41,7 @@ Metadata In AtKey allows you to add more aspects of AtKey. If you want your data
 | isEncrypted     |              | bool        |
 | isCached        |              | bool        |
 
-**Key Creation rules**
+## **Key Creation rules**
 
 A key in atProtocol has the structure described below.
 
@@ -59,7 +59,7 @@ A key in atProtocol should adhere to following rules:
 8. Reserved keys in protocol, private keys and hidden keys cannot be notified Ex: notify:\_secret@jagan:sitaram 9.Protocol prevents creation of a key with a owner/sharedBy using an atSign that’s not owned by the current user.
 9. Key cannot be a reserved key.
 
-List of reserved keys:
+List of reserved keys (do not use these names):
 
 * privatekey:at\_pkam\_privatekey
 * privatekey:at\_pkam\_publickey
@@ -72,14 +72,16 @@ List of reserved keys:
 * privatekey:at\_secret
 * privatekey:at\_secret\_deleted
 
-**atPlatform CRUD operations**
+## **CRUD operations**
 
-**Create/Update Data** atPlatform SDK exposes two methods to create the data. They are:
+### **Create/Update Data**
+
+The **** atPlatform SDK exposes two methods to create the data. They are:
 
 * put
 * putMeta
 
-_**put**_
+#### **put**
 
 Update’s value of key is if it is already present. Otherwise creates a new key.
 
@@ -87,7 +89,9 @@ To share a key to another atSign, use AtKey.shared() factory method or populate 
 
 **Signature**
 
-`Future<bool> put(AtKey key, dynamic value);`
+```dart
+Future<bool> put(AtKey key, dynamic value);
+```
 
 Accepts an instance of AtKey and value and stores it in the local storage(local secondary) has a key-value pair.
 
@@ -97,13 +101,15 @@ The value can be either a textual information or a binary data (e.g. Images, Fil
 
 Throws **AtClientException** with an error code and error description that describes that cause of the exception.
 
-_**putMeta**_
+#### **putMeta**
 
 Updates the metadata of the key.
 
-_Signature_
+**Signature**
 
-`Future<bool> putMeta(AtKey key);`
+```dart
+Future<bool> putMeta(AtKey key);
+```
 
 Accepts an Instance of AtKey. The Metadata is encapsulated in the AtKey. Set the new/updated metadata to \[Atkey.Metadata].
 
@@ -111,11 +117,17 @@ Returns a boolean value that represents the status of the putMeta method. Return
 
 Throws **AtClientException** with an error code and error description that describes that cause of the exception.
 
-**Read Data**
+### **Read Data**
 
-_**get**_
+#### **get**
 
-Get the value of the key from the user’s cloud secondary. Signature `Future<AtValue> get (AtKey key);`
+Get the value of the key from the user’s cloud secondary.
+
+**Signature**
+
+```dart
+Future<AtValue> get(AtKey key);
+```
 
 Accepts an Instance of AtKey. The Metadata is encapsulated in the AtKey. Fetch both the value and metadata of the key.
 
@@ -123,13 +135,15 @@ Returns a boolean value that represents the status of the ‘get’ method. Retu
 
 Throws **AtClientException** with an error code and error description that describes that cause of the exception.
 
-_**getMeta**_
+#### **getMeta**
 
 Gets the metadata of the key.
 
 **Signature**
 
-`Future <bool> getMeta(AtKey key);`
+```dart
+Future<bool> getMeta(AtKey key);
+```
 
 Accepts an Instance of AtKey. The Metadata is encapsulated in the AtKey. Gets the metadata of the key.
 
@@ -137,11 +151,17 @@ Returns a boolean value that represents the status of the putMeta method. Return
 
 Throws _AtClientException_ with an error code and error description that describes that cause of the exception.
 
-**Delete Data**
+### **Delete Data**
+
+#### **delete**
 
 Deletes the key.
 
-**Signature** `Future<bool> delete(AtKey key);`
+**Signature**
+
+```dart
+Future<bool> delete(AtKey key);
+```
 
 Accepts an Instance of AtKey. Deletes the key from the storage. If the key is shared with another atSign, notifies the other atSign on the deletion of the key.
 
@@ -149,35 +169,39 @@ Returns a boolean value that represents the status of the delete method. Returns
 
 Throws **AtClientException** with an error code and error description that describes that cause of the exception.
 
-**List of Keys**
+### **List Keys**
 
-_**getKeys**_
+#### **getKeys**
 
 Get all the keys stored in the user’s secondary in string format.
 
-_Signature_
+**Signature**
 
-`Future <<List<String>> getKeys({String? regex, String? sharedBy, String? sharedWith});`
+```dart
+Future<List<String>> getKeys({String? regex, String? sharedBy, String? sharedWith});
+```
 
 If regex is specified only matching keys are returned, giving you the flexibility to use different regexes for different types of data.
 
-_**getAtKeys**_
+#### **getAtKeys**
 
 Get all the keys stored in the user’s secondary in \[AtKey] format.
 
 **Signature**
 
-`Future <<List<AtKey>> getAtKeys({String? regex, String? sharedBy, String? sharedWith});`
+```dart
+Future<List<AtKey>> getAtKeys({String? regex, String? sharedBy, String? sharedWith});
+```
 
 If regex is specified only matching keys are returned, giving you the flexibility to use different regexes for different types of data.
 
-**Notification**
+## **Notifications**
 
-**atProtocol data visibility**
+### **atProtocol data visibility**
 
 The atProtocol saves data created in a key-value pair format. atProtocol lets you create data with three levels of visibility. They are public, shared and self data. In the atProtocol a piece of data is identified as a certain data type based on the key structure. In the SDK, AtKey exposes abstractions to create keys for the various data types. Below sections describe this in detail.
 
-**Public data**
+#### **Public data**
 
 Public data can be looked up without authentication. I.e. if @bob wants to lookup public data in the secondary server of @alice, @bob does not need to prove to @alice that he is @bob to see the data publicly shared by @alice. Public view of the @alice’s data will be the same for any user on the atPlatform. I.e. if @jane and @john look up some public data from @alice, it will be exactly the same as what @bob sees.
 
@@ -204,7 +228,7 @@ var value = '+1 100 200 300';
 var putResult = await atClient.put(phoneKey, value);
 ```
 
-**Shared data**
+#### **Shared data**
 
 Shared data does exactly what it says it does! It is created in order to share it with other people. These are the people we typically know and trust. When @bob shares his phone number with @alice, then only @alice can see that piece of data. Good examples of shared data in the real world are “phone number” and “email”. We only share these details with the people we know and trust.
 
@@ -232,7 +256,9 @@ var value = '+1 100 200 300';
 var putResult = await atClient.put(phoneKey, value);
 ```
 
-**Self data** Self data is created for self. If @bob creates data for self, only @bob and no one else can see the data.
+#### **Self data**
+
+Self data is created for self. If @bob creates data for self, only @bob and no one else can see the data.
 
 Good examples of self data are “passwords” and “financial data”. We keep these details to ourselves.
 
@@ -263,9 +289,9 @@ var putResult = await atClient.put(phoneKey, value);
    All of the above rules are implemented and exposed using the validate() method on AtKey. These rules are enforced during creation of the data.
 ```
 
-**Key attributes of atProtocol data**
+### **Key attributes of atProtocol data**
 
-_**TTL - Time to live**_
+#### **TTL - Time to live**
 
 TTL (Time To Live) is the duration of time for which the key will be available. TTL is expressed in milliseconds. Adding TTL during the key creation results in the time at which the key expires.
 
@@ -280,11 +306,15 @@ var value = '+1 100 200 300';
 var putResult = await atClient.put(phoneKey, value);
 ```
 
-**Scan/List behavior with TTL** A key whose ttl has been set will be listed until a background job that runs at frequent time intervals deletes all the expired keys
+**Scan/List behavior with TTL**
 
-**Lookup/Get behavior with TTL** As long as the key has not expired, a “lookup” of the key returns the value that was set originally. After the key expiry, ‘null’ is returned when the key is looked up for a value.
+A key whose ttl has been set will be listed until a background job that runs at frequent time intervals deletes all the expired keys
 
-_**TTB - Time to birth**_
+**Lookup/Get behavior with TTL**
+
+As long as the key has not expired, a “lookup” of the key returns the value that was set originally. After the key expiry, ‘null’ is returned when the key is looked up for a value.
+
+#### **TTB - Time to birth**
 
 TTB (Time To Birth) is the span of time within which the key’s value is not available. TTB is expressed in milliseconds. Adding TTB during the key creation results in the time at which the key’s value is available.
 
@@ -307,7 +337,7 @@ A key whose ttb has been set will be listed.
 
 Until the key’s TTB is met, a “lookup” of the key returns ‘null’. After which the original value of the key is returned.
 
-_**TTR - Time to refresh**_
+#### **TTR - Time to refresh**
 
 TTR (Time To Refresh) is the span of time that represents the time interval at which the cached key will be refreshed with a new value(if the original key’s value is updated). TTR is expressed in seconds. Further, TTR can also be set to ‘-1’ which represents the value of the original key will not be updated and therefore the cached key need not be refreshed.
 
@@ -344,6 +374,6 @@ When an original key is updated by the creator, the ones who have cached it need
 1. The Auto-Notify notifies the updated value to another atSign, thereby the cached key’s value is updated.
 2. The refresh job in the secondary server
 
-_**CCD - Cascade delete**_
+#### **CCD - Cascade delete**
 
 CCD (Cascade delete) compliments the TTR functionality by allowing the owner of the key to decide if the cached key has to be deleted upon the deletion of the original key. CCD accepts a boolean value(either true (or) false). When set to true, upon deletion of the original key, the cached key is also deleted. Setting it to false results in the cached key remaining, even after the original key is deleted.
