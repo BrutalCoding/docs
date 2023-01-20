@@ -6,10 +6,10 @@
 
 * [Start](sdk/start.md)
 
-## 📚 SDK Reference <a href="#sdk" id="sdk"></a>
+## 📚 SDK Reference <a href="#123" id="123"></a>
 
-* [Flutter](sdk-1/flutter/README.md)
-  * [Onboarding](sdk-1/flutter/onboarding.md)
-  * [AtClientPreference](sdk-1/flutter/atclientpreference.md)
-  * [AtClientManager](sdk-1/flutter/atclientmanager.md)
-  * [Key Basics](sdk-1/flutter/key-basics.md)
+* [Flutter](123/flutter/README.md)
+  * [Onboarding](123/flutter/onboarding.md)
+  * [AtClientPreference](123/flutter/atclientpreference.md)
+  * [AtClientManager](123/flutter/atclientmanager.md)
+  * [Key Basics](123/flutter/key-basics.md)
