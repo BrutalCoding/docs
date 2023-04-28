@@ -10,8 +10,8 @@
   * [atServer](start/core/atserver.md)
   * [atDirectory](start/core/atdirectory.md)
   * [atProtocol](start/core/atprotocol.md)
+* [IoT](start/iot.md)
 * [SDK Implementations](start/sdk.md)
-* [IoT Overview](start/iot.md)
 
 ## 📚 SDK Reference <a href="#sdk" id="sdk"></a>
 
