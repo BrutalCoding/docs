@@ -1,6 +1,10 @@
+---
+description: An overview of Atsign's core pillars of technology
+---
+
 # Core Technology
 
-<figure><img src="../../.gitbook/assets/4 Pillars Simple.png" alt=""><figcaption><p>The 4 Pillars of Atsign's Core Technology</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/4 Pillars Full.png" alt=""><figcaption><p>The 4 Pillars of Atsign's Core Technology</p></figcaption></figure>
 
 ## atSigns
 
