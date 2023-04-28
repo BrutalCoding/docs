@@ -5,11 +5,18 @@
 ## 👋 Get Started <a href="#start" id="start"></a>
 
 * [Start](sdk/start.md)
+* [Core Technology](start/core/README.md)
+  * [atSign](start/core/atsign.md)
+  * [atServer](start/core/atserver.md)
+  * [atDirectory](start/core/atdirectory.md)
+  * [atProtocol](start/core/atprotocol.md)
+* [SDK Implementations](start/sdk.md)
+* [IoT Overview](start/iot.md)
 
-## 📚 SDK Reference <a href="#123" id="123"></a>
+## 📚 SDK Reference <a href="#sdk" id="sdk"></a>
 
-* [Flutter](123/flutter/README.md)
-  * [Onboarding](123/flutter/onboarding.md)
-  * [AtClientPreference](123/flutter/atclientpreference.md)
-  * [AtClientManager](123/flutter/atclientmanager.md)
-  * [Key Basics](123/flutter/key-basics.md)
+* [Flutter](sdk-1/flutter/README.md)
+  * [Onboarding](sdk-1/flutter/onboarding.md)
+  * [AtClientPreference](sdk-1/flutter/atclientpreference.md)
+  * [AtClientManager](sdk-1/flutter/atclientmanager.md)
+  * [Key Basics](sdk-1/flutter/key-basics.md)
