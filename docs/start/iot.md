@@ -1,8 +1,8 @@
 ---
-description: Get started with IoT (Internet of Things)
+description: Get started with Operational Technology and Internet of Things
 ---
 
-# IoT
+# OT / IoT
 
 ## Overview
 
@@ -58,7 +58,9 @@ Please contact us! We want to support every platform that we possibly can.
 
 ## Custom Solutions
 
-If our off-the-shelf solutions don’t meet your needs, you can create your own solutions using one of our [SDKs](sdk.md).
+Q: How to get to building a product/solution?
+
+If our off-the-shelf solutions don’t meet your needs, you can create your own solutions using one of our [SDKs](broken-reference).
 
 * [Getting started with Dart/Flutter](https://docs.atsign.com/start/flutter/) - our core SDK, with support for Intel and ARM 32- and 64-bit architectures, as well as support for the RISC-V architecture in Dart 3 (currently in beta)
   * The Flutter framework allows you to build cross-platform apps for iOS, Android and Mac OS X, Linux and Windows desktops

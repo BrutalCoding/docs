@@ -2,7 +2,7 @@
 
 ### What is an atSign?
 
-An atSign (e.g. @alice) is simply a resolvable address (kind of like an email address) on the atPlatform. Anything can have an atSign, a person, organization, or thing (IoT), even individual songs or videos could have atSign addresses.
+An atSign (e.g. @alice) is simply a resolvable address (kind of like an email address) for an atServer. Anything can have an atSign, a person, organization, or thing (IoT), even individual songs or videos could have atSign addresses.
 
 ### What's it used for?
 

@@ -1,22 +1,51 @@
 # Table of contents
 
-* [Home](README.md)
+* [🏠 Home](README.md)
+* [👋 Get Started](start/README.md)
+  * [Tech Overview](start/tech-overview.md)
+  * [OEM](start/oem.md)
+  * [OT / IoT](start/iot.md)
+  * [DevOps](start/devops.md)
+  * [App Developers](start/app.md)
+* [❓ FAQ](faq/README.md)
+  * [Question 1](faq/question-1.md)
 
-## 👋 Get Started <a href="#start" id="start"></a>
+## 👨🎓 Learn The Tech <a href="#learn" id="learn"></a>
 
-* [Start](sdk/start.md)
-* [Core Technology](start/core/README.md)
-  * [atSign](start/core/atsign.md)
-  * [atServer](start/core/atserver.md)
-  * [atDirectory](start/core/atdirectory.md)
-  * [atProtocol](start/core/atprotocol.md)
-* [IoT](start/iot.md)
-* [SDK Implementations](start/sdk.md)
+* [Core Technology](learn/core/README.md)
+  * [atServer](learn/core/atserver/README.md)
+    * [atSign](learn/core/atserver/atsign.md)
+    * [atRecords](learn/core/atserver/atrecords.md)
+  * [atDirectory](learn/core/atdirectory.md)
+  * [atProtocol](learn/core/atprotocol/README.md)
+    * [Specification (GitHub)](https://github.com/atsign-foundation/at\_protocol/blob/trunk/specification/at\_protocol\_specification.md)
+* [The atClient SDK](learn/sdk/README.md)
+  * [Onboarding](learn/sdk/onboarding.md)
+  * [CRUD Operations](learn/sdk/crud-operations.md)
+  * [Events](learn/sdk/events.md)
+  * [Synchronization](learn/sdk/synchronization.md)
+* [Additional Building Blocks](learn/additional-building-blocks/README.md)
+  * [Dart Libraries](learn/additional-building-blocks/dart-libraries.md)
+  * [Flutter Widgets](learn/additional-building-blocks/flutter-widgets.md)
+  * [Untitled](learn/additional-building-blocks/untitled.md)
 
-## 📚 SDK Reference <a href="#sdk" id="sdk"></a>
+## 🔧 Solutions
 
-* [Flutter](sdk-1/flutter/README.md)
-  * [Onboarding](sdk-1/flutter/onboarding.md)
-  * [AtClientPreference](sdk-1/flutter/atclientpreference.md)
-  * [AtClientManager](sdk-1/flutter/atclientmanager.md)
-  * [Key Basics](sdk-1/flutter/key-basics.md)
+* [Ssh! No Ports](solutions/ssh-no-ports.md)
+* [atmospherePro](solutions/atmospherepro.md)
+
+## 🗒 Example Scenarios <a href="#examples" id="examples"></a>
+
+* [Examples](examples/examples.md)
+
+## ❌ To be removed
+
+* [Flutter](to-be-removed/flutter/README.md)
+  * [AtClientPreference](to-be-removed/flutter/atclientpreference.md)
+  * [AtClientManager](to-be-removed/flutter/atclientmanager.md)
+  * [Key Basics](to-be-removed/flutter/key-basics.md)
+  * [Onboarding](to-be-removed/flutter/onboarding.md)
+
+***
+
+* [Back to the main site](https://atsign.com/)
