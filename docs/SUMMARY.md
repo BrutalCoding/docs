@@ -2,13 +2,13 @@
 
 * [🏠 Home](README.md)
 * [👋 Get Started](start/README.md)
-  * [Tech Overview](start/tech-overview.md)
   * [OEM](start/oem.md)
   * [OT / IoT](start/iot.md)
   * [DevOps](start/devops.md)
   * [App Developers](start/app.md)
 * [❓ FAQ](faq/README.md)
   * [Question 1](faq/question-1.md)
+  * [Question 2](faq/question-2.md)
 
 ## 👨🎓 Learn The Tech <a href="#learn" id="learn"></a>
 
@@ -27,25 +27,30 @@
 * [Additional Building Blocks](learn/additional-building-blocks/README.md)
   * [Dart Libraries](learn/additional-building-blocks/dart-libraries.md)
   * [Flutter Widgets](learn/additional-building-blocks/flutter-widgets.md)
-  * [Untitled](learn/additional-building-blocks/untitled.md)
+  * [IoT Hub Add-ons](learn/additional-building-blocks/iot-hub-add-ons.md)
+  * [IoT Device Add-ons](learn/additional-building-blocks/iot-device-add-ons.md)
 
 ## 🔧 Solutions
 
 * [Ssh! No Ports](solutions/ssh-no-ports.md)
+* [Video Streams](solutions/video-streams.md)
 * [atmospherePro](solutions/atmospherepro.md)
 
 ## 🗒 Example Scenarios <a href="#examples" id="examples"></a>
 
-* [Examples](examples/examples.md)
+* [ESP32 Monitor + App](examples/esp32-monitor-+-app.md)
+
+***
+
+* [Editorial Page](editorial-page.md)
+* [Landing Page](landing-page.md)
+* [Back to the main site](https://atsign.com/)
 
 ## ❌ To be removed
 
+* [Example Building Blocks](to-be-removed/example-building-blocks.md)
 * [Flutter](to-be-removed/flutter/README.md)
   * [AtClientPreference](to-be-removed/flutter/atclientpreference.md)
   * [AtClientManager](to-be-removed/flutter/atclientmanager.md)
   * [Key Basics](to-be-removed/flutter/key-basics.md)
   * [Onboarding](to-be-removed/flutter/onboarding.md)
-
-***
-
-* [Back to the main site](https://atsign.com/)
