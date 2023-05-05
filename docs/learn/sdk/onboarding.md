@@ -32,6 +32,7 @@ flutter pub add at_onboarding_flutter
 
 Or add the package to your `pubspec.yaml` manually:
 
+{% code title="pubspec.yaml" %}
 ```yaml
 dependencies:
   flutter:
@@ -39,6 +40,7 @@ dependencies:
   at_client_mobile: ^3.2.9
   at_onboarding_flutter: ^6.0.3
 ```
+{% endcode %}
 
 #### Usage
 

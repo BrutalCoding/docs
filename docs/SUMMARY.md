@@ -17,8 +17,8 @@
   * [atRecord](learn/core/atrecord.md)
   * [Specification (GitHub)](https://github.com/atsign-foundation/at\_protocol/blob/trunk/specification/at\_protocol\_specification.md)
 * [The atClient SDK](learn/sdk/README.md)
-  * [atRecord Reference](learn/sdk/atrecord-reference.md)
   * [Onboarding](learn/sdk/onboarding.md)
+  * [atID Reference](learn/sdk/atid-reference.md)
   * [CRUD Operations](learn/sdk/crud-operations.md)
   * [Events](learn/sdk/events.md)
   * [Synchronization](learn/sdk/synchronization.md)
@@ -43,7 +43,7 @@
 
 * [Editorial Page](editorial-page.md)
 * [Landing Page](landing-page.md)
-* [Back to the main site](https://atsign.com/)
+* [Main site](https://atsign.com/)
 
 ## ❌ To be removed
 
@@ -51,4 +51,3 @@
 * [Flutter](to-be-removed/flutter/README.md)
   * [AtClientPreference](to-be-removed/flutter/atclientpreference.md)
   * [AtClientManager](to-be-removed/flutter/atclientmanager.md)
-  * [Onboarding](to-be-removed/flutter/onboarding.md)

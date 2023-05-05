@@ -16,15 +16,15 @@ atRecords are the data records that are stored by the atServers. We use the comm
 
 An atID is the identifier half of the "identifier-value" pair. Similar to the primary key of a tabular database, the atID must be a unique string which represents the data.
 
-There are 5 different types of an atID of which developers need only interact with the first three.
+There are 5 different types of an atID.
 
-| Type     | Purpose                                                                                  |
-| -------- | ---------------------------------------------------------------------------------------- |
-| Public   | Store and share public data which can be seen by anyone.                                 |
-| Private  | Store private data which can only be seen by the owner.                                  |
-| Shared   | Store and share private data which can only be seen by the owner and intended recipient. |
-| Internal | Store private data which can only be seen by the owner, hidden by default.               |
-| Cached   | Cache shared data from other atSigns for performance and offline mode.                   |
+| Type    | Purpose                                                                                  |
+| ------- | ---------------------------------------------------------------------------------------- |
+| Public  | Store and share public data which can be seen by anyone.                                 |
+| Self    | Store data which can only be seen by the owner.                                          |
+| Shared  | Store and share private data which can only be seen by the owner and intended recipient. |
+| Private | Store data which can only be seen by the owner, hidden by default.                       |
+| Cached  | Cache shared data from other atSigns for performance and offline mode.                   |
 
 ### Structure of an atID
 
