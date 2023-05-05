@@ -12,11 +12,11 @@ description: An overview of Atsign's core pillars of technology
 
 <summary>Relationships</summary>
 
-Every **atServer** is associated with one **atSign**, and each atServer stores many **atRecords.**
+Every **atServer** is associated with _one_ **atSign**, and each atServer stores _many_ **atRecords.**
 
-When provided an **atSign**, the **atDirectory** returns a DNS address and port number for its **atServer.**
+When provided an **atSign**, the **atDirectory** returns a _DNS address_ and _port number_ for its **atServer.**
 
-The **atProtocol** is the protocol used to speak to an **atServer.**
+The **atProtocol** is the _application layer protocol_ used to communicate with an **atServer.**
 
 </details>
 
