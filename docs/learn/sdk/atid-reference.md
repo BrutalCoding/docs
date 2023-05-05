@@ -45,7 +45,7 @@ atID was previously called "AtKey".
 The code has not fully been migrated to reflect this name change, so please assume that an "AtKey" is functionally equivalent to an atID.
 {% endhint %}
 
-As mentioned previously, there are four types of atIDs that can be created.&#x20;
+See below for how to create the various types of atIDs.
 
 ### Public atID
 
@@ -143,9 +143,9 @@ AtKey sharedKey = (AtKey.shared('phone', 'wavi')
 ```
 {% endcode %}
 
-#### Cached atID
+#### Caching shared atIDs
 
-To cache the atID, the developer can do a [cascade](https://dart.dev/language/operators#cascade-notation) call on `SharedKeyBuilder.cache`.
+To cache a shared atID, you can do a [cascade](https://dart.dev/language/operators#cascade-notation) call on `SharedKeyBuilder.cache`.
 
 {% code title="Caching example" %}
 ```dart
