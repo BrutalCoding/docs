@@ -60,7 +60,7 @@ The owner (i.e. creator's) atSign for that particular atRecord.
    i.e entity must follow the notation: `<identifier>.<namespace>`
 5. Cached atIDs should have a different owner than the current atSign
 6. Visibility scope and owner cannot be the same for a shared atID
-7. Reserved atIDs cannot be [modified](../../sdk/crud-operations.md) or [notified](../../sdk/events.md)
+7. Reserved atIDs cannot be [modified](../sdk/crud-operations.md) or [notified](../sdk/events.md)
 8. For newly created atIDs, the owner must match the current atSign
 
 

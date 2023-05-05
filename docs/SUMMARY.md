@@ -13,12 +13,9 @@
 ## 👨🎓 Learn The Tech <a href="#learn" id="learn"></a>
 
 * [Core Technology](learn/core/README.md)
-  * [atServer](learn/core/atserver/README.md)
-    * [atSign](learn/core/atserver/atsign.md)
-    * [atRecord](learn/core/atserver/atrecord.md)
-  * [atDirectory](learn/core/atdirectory.md)
-  * [atProtocol](learn/core/atprotocol/README.md)
-    * [Specification (GitHub)](https://github.com/atsign-foundation/at\_protocol/blob/trunk/specification/at\_protocol\_specification.md)
+  * [atSign](learn/core/atsign.md)
+  * [atRecord](learn/core/atrecord.md)
+  * [Specification (GitHub)](https://github.com/atsign-foundation/at\_protocol/blob/trunk/specification/at\_protocol\_specification.md)
 * [The atClient SDK](learn/sdk/README.md)
   * [atRecord Reference](learn/sdk/atrecord-reference.md)
   * [Onboarding](learn/sdk/onboarding.md)

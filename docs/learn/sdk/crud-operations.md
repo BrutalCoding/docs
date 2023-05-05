@@ -37,7 +37,7 @@ AtClient atClient = atClientManager.atClient;
 
 ### Creating Data
 
-To create data, first you need to create an [atIdentifier](../core/atserver/atrecord.md#atidentifier) to store&#x20;
+To create data, first you need to create an [atIdentifier](../core/atrecord.md#atidentifier) to store&#x20;
 
 Rest coming soon!
 
