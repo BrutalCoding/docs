@@ -1,4 +1,4 @@
-# Examples
+# Example Building Blocks
 
 * Iot device blocks (left side of network arch diagram)
   * MQTT in

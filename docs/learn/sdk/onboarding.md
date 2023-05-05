@@ -76,6 +76,16 @@ You can find the API reference for the entire package available on [pub](https:/
 The `AtOnboarding` class API reference is available [here](https://pub.dev/documentation/at\_onboarding\_flutter/latest/at\_onboarding/AtOnboarding-class.html).
 {% endtab %}
 
+{% tab title="Dart" %}
+Coming soon!
+{% endtab %}
+
+{% tab title="Java" %}
+In Java, we expect the keys to be made available in a certain directory on the device.
+
+Rest coming soon!
+{% endtab %}
+
 {% tab title="Other Platforms" %}
 Coming soon!
 {% endtab %}

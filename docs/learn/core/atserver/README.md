@@ -1,8 +1,16 @@
+---
+description: A private, encrypted datastore
+---
+
 # atServer
 
 ### What is an atServer?
 
-An atServer is essentially a private datastore for storing encrypted data owned by an atSign, and a rendezvous point for information exchange. An atServer is responsible for the delivery of encrypted information to other atServers, from which the owners of those atSigns can then retrieve the data. What is important to know is that the atServer stores only encrypted information and never has access to the cryptographic keys themselves.
+An atServer is a private datastore for storing encrypted data owned by an atSign, and a rendezvous point for information exchange. An atServer is responsible for the delivery of encrypted information to other atServers, from which the owners of those atSigns can then retrieve the data.&#x20;
+
+{% hint style="info" %}
+Unless explicitly made public, atServers only store encrypted data and do not have access to the cryptographic keys, nor the ability to decrypt the stored information.
+{% endhint %}
 
 ### Functionality
 

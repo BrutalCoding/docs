@@ -15,11 +15,12 @@
 * [Core Technology](learn/core/README.md)
   * [atServer](learn/core/atserver/README.md)
     * [atSign](learn/core/atserver/atsign.md)
-    * [atRecords](learn/core/atserver/atrecords.md)
+    * [atRecord](learn/core/atserver/atrecord.md)
   * [atDirectory](learn/core/atdirectory.md)
   * [atProtocol](learn/core/atprotocol/README.md)
     * [Specification (GitHub)](https://github.com/atsign-foundation/at\_protocol/blob/trunk/specification/at\_protocol\_specification.md)
 * [The atClient SDK](learn/sdk/README.md)
+  * [atRecord Reference](learn/sdk/atrecord-reference.md)
   * [Onboarding](learn/sdk/onboarding.md)
   * [CRUD Operations](learn/sdk/crud-operations.md)
   * [Events](learn/sdk/events.md)
@@ -27,8 +28,9 @@
 * [Additional Building Blocks](learn/additional-building-blocks/README.md)
   * [Dart Libraries](learn/additional-building-blocks/dart-libraries.md)
   * [Flutter Widgets](learn/additional-building-blocks/flutter-widgets.md)
-  * [IoT Hub Add-ons](learn/additional-building-blocks/iot-hub-add-ons.md)
+  * [IoT Hub Add-ons](learn/additional-building-blocks/untitled.md)
   * [IoT Device Add-ons](learn/additional-building-blocks/iot-device-add-ons.md)
+* [Key Basics](learn/key-basics.md)
 
 ## 🔧 Solutions
 
@@ -48,9 +50,8 @@
 
 ## ❌ To be removed
 
-* [Example Building Blocks](to-be-removed/example-building-blocks.md)
+* [Example Building Blocks](examples/examples.md)
 * [Flutter](to-be-removed/flutter/README.md)
   * [AtClientPreference](to-be-removed/flutter/atclientpreference.md)
   * [AtClientManager](to-be-removed/flutter/atclientmanager.md)
-  * [Key Basics](to-be-removed/flutter/key-basics.md)
   * [Onboarding](to-be-removed/flutter/onboarding.md)
