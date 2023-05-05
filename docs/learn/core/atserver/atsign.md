@@ -1,3 +1,7 @@
+---
+description: A unique identifier which serves as the address of the atServer
+---
+
 # atSign
 
 ## What is an atSign?
