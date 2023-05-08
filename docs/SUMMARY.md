@@ -27,13 +27,13 @@
   * [Flutter Widgets](learn/additional-building-blocks/flutter-widgets.md)
   * [IoT Hub Add-ons](learn/additional-building-blocks/untitled.md)
   * [IoT Device Add-ons](learn/additional-building-blocks/iot-device-add-ons.md)
-* [Key Basics](learn/key-basics.md)
 
 ## 🔧 Solutions
 
 * [Ssh! No Ports](solutions/ssh-no-ports.md)
 * [Video Streams](solutions/video-streams.md)
 * [atmospherePro](solutions/atmospherepro.md)
+* [IoT deployments](solutions/iot-deployments.md)
 
 ## 🗒 Example Scenarios <a href="#examples" id="examples"></a>
 
@@ -47,6 +47,7 @@
 
 ## ❌ To be removed
 
+* [Key Basics](to-be-removed/key-basics.md)
 * [Example Building Blocks](examples/examples.md)
 * [Flutter](to-be-removed/flutter/README.md)
   * [AtClientPreference](to-be-removed/flutter/atclientpreference.md)
