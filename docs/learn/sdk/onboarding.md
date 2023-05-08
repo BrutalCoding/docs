@@ -88,7 +88,7 @@ In Java, we expect the keys to be made available in a certain directory on the d
 Rest coming soon!
 {% endtab %}
 
-{% tab title="Other Platforms" %}
+{% tab title="Other Clients" %}
 Coming soon!
 {% endtab %}
 {% endtabs %}

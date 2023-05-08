@@ -23,10 +23,12 @@
   * [Events](learn/sdk/events.md)
   * [Synchronization](learn/sdk/synchronization.md)
 * [Additional Building Blocks](learn/additional-building-blocks/README.md)
+  * [CLI Tools](learn/additional-building-blocks/cli-tools.md)
+  * [Networking Utilities](learn/additional-building-blocks/networking-utilities.md)
   * [Dart Libraries](learn/additional-building-blocks/dart-libraries.md)
   * [Flutter Widgets](learn/additional-building-blocks/flutter-widgets.md)
-  * [IoT Hub Add-ons](learn/additional-building-blocks/untitled.md)
-  * [IoT Device Add-ons](learn/additional-building-blocks/iot-device-add-ons.md)
+  * [IT Add-ons](learn/additional-building-blocks/it-add-ons.md)
+  * [IoT Deployment Add-ons](learn/additional-building-blocks/iot-deployment-add-ons.md)
 
 ## 🔧 Solutions
 

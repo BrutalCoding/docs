@@ -44,10 +44,12 @@ Rest coming soon!
 
 {% endtab %}
 
-{% tab title="Second Tab" %}
+{% tab title="Java" %}
+Coming soon!
+{% endtab %}
 
-
-
+{% tab title="Other Clients" %}
+Coming soon!
 {% endtab %}
 {% endtabs %}
 

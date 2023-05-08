@@ -25,7 +25,11 @@ An example of this pattern can be found in [at\_daemon\_server](https://github.c
 {% endhint %}
 {% endtab %}
 
-{% tab title="Second Tab" %}
+{% tab title="Java" %}
 
+{% endtab %}
+
+{% tab title="Untitled" %}
+Coming soon!
 {% endtab %}
 {% endtabs %}
