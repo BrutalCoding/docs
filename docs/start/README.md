@@ -14,7 +14,7 @@ If your needs fall under one of these categories, look no further than here!
 
 Some solutions using Atsign's tech worth looking into
 
-<table data-card-size="large" data-column-title-hidden data-view="cards"><thead><tr><th data-card-target data-type="content-ref">Link</th><th>Description</th></tr></thead><tbody><tr><td><a href="../solutions/ssh-no-ports/">ssh-no-ports</a></td><td>sshnp desc</td></tr><tr><td><a href="../solutions/video-streams.md">video-streams.md</a></td><td>Video streams desc.</td></tr><tr><td><a href="../solutions/atmospherepro.md">atmospherepro.md</a></td><td>atmospherePro desc</td></tr><tr><td><a href="../solutions/iot-deployments.md">iot-deployments.md</a></td><td>Iot deployment desc</td></tr></tbody></table>
+<table data-card-size="large" data-column-title-hidden data-view="cards"><thead><tr><th data-card-target data-type="content-ref">Link</th><th>Description</th></tr></thead><tbody><tr><td><a href="../solutions/ssh-no-ports.md">ssh-no-ports.md</a></td><td>sshnp desc</td></tr><tr><td><a href="../solutions/video-streams.md">video-streams.md</a></td><td>Video streams desc.</td></tr><tr><td><a href="../solutions/atmospherepro.md">atmospherepro.md</a></td><td>atmospherePro desc</td></tr><tr><td><a href="../solutions/iot-deployments.md">iot-deployments.md</a></td><td>Iot deployment desc</td></tr></tbody></table>
 
 ## Custom Solutions
 

@@ -32,8 +32,9 @@
 
 ## 🔧 Solutions
 
-* [Ssh! No Ports](solutions/ssh-no-ports/README.md)
+* [Ssh! No Ports](solutions/ssh-no-ports.md)
   * [Install Ssh! No Ports](solutions/ssh-no-ports/install-ssh-no-ports.md)
+  * [Advanced use cases](solutions/ssh-no-ports/advanced-use-cases.md)
 * [Video Streams](solutions/video-streams.md)
 * [atmospherePro](solutions/atmospherepro.md)
 * [IoT deployments](solutions/iot-deployments.md)
