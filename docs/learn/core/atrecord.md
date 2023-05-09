@@ -29,7 +29,7 @@ There are 5 different types of an atID.
 ### Structure of an atID
 
 ```
-[cached:]<visibility scope>:<entity ID><owner’s atSign>
+[cached:]<visibility scope>:<record ID><owner’s atSign>
 ```
 
 #### Cached
@@ -40,7 +40,7 @@ A marker for whether it is a cached key or not.
 
 A marker for who has access to the key.
 
-#### Entity ID
+#### Record ID
 
 A unique string used to represent the atRecord.
 
