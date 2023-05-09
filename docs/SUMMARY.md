@@ -37,14 +37,12 @@
 * [atmospherePro](solutions/atmospherepro.md)
 * [IoT deployments](solutions/iot-deployments.md)
 
-## 🗒 Example Scenarios <a href="#examples" id="examples"></a>
+## 🗒 Tutorials <a href="#examples" id="examples"></a>
 
-* [ESP32 Monitor + App](examples/esp32-monitor-+-app.md)
+* [ESP32 Sensor Device + App](examples/esp32-sensor-device-+-app.md)
 
 ***
 
-* [Editorial Page](editorial-page.md)
-* [Landing Page](landing-page.md)
 * [Main site](https://atsign.com/)
 
 ## ❌ To be removed
