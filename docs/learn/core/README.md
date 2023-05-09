@@ -28,9 +28,9 @@ An atServer is a private datastore for storing encrypted data owned by an atSign
 Unless explicitly made public, atServers only store encrypted data and do not have access to the cryptographic keys, nor the ability to decrypt the stored information.
 {% endhint %}
 
-### Functionality
+<details>
 
-An atServer provides the following functionality:
+<summary> atServer Functionality</summary>
 
 * Cryptographic authentication of client devices
 * Cryptographic authentication of other atServers.
@@ -40,6 +40,10 @@ An atServer provides the following functionality:
 * Synchronization of data with multiple clients (edge devices).
 * TLS wire encryption from clients to atServers using SSL certificates.
 * Mutually authenticated TLS 1.2/1.3 wire encryption between atServers using SSL certificates.
+
+</details>
+
+
 
 ## atDirectory
 
