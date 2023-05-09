@@ -6,9 +6,6 @@
   * [OT / IoT](start/iot.md)
   * [DevOps](start/devops.md)
   * [App Developers](start/app.md)
-* [❓ FAQ](faq/README.md)
-  * [Question 1](faq/question-1.md)
-  * [Question 2](faq/question-2.md)
 
 ## 👨🎓 Learn The Tech <a href="#learn" id="learn"></a>
 
@@ -45,6 +42,9 @@
 
 ***
 
+* [FAQ](faq/README.md)
+  * [Question 1](faq/question-1.md)
+  * [Question 2](faq/question-2.md)
 * [Main site](https://atsign.com/)
 
 ## ❌ To be removed
