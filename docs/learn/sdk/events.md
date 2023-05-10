@@ -21,6 +21,26 @@ If you need simultaneous access to multiple atClients, you need to create a new 
 
 An example of this pattern can be found in [at\_daemon\_server](https://github.com/atsign-foundation/at\_services/tree/trunk/packages/at\_daemon\_server/lib/src/server).
 {% endhint %}
+
+## AtClient
+
+As previously mentioned, the AtClientManager stores the actual AtClient itself. You can retrieve the `AtClient` by calling `atClientManager.atClient`.
+
+```dart
+AtClient atClient = atClientManager.atClient;
+```
+
+### atID
+
+Before you can do anything with an atRecord, you need an [atID](../core/atrecord.md#atidentifier) to represent it.
+
+If you don't know how to create an atID, please see the [reference](atid-reference.md) first.
+
+{% hint style="info" %}
+The following examples use the self atID `phone.wavi@<current atSign>`
+
+It is up to the developer to modify the atID according to their use case.
+{% endhint %}
 {% endtab %}
 
 {% tab title="Java" %}

@@ -24,7 +24,7 @@ Head to [the registrar site](https://my.atsign.com/go). It is recommended that y
 
 There are multiple ways to generate the associated `.atKeys` of an atSign.&#x20;
 
-* [Using AtmospherePro](https://www.youtube.com/watch?v=8xJnbsuF4C8) (3 minute video)
+* [Using atmospherePro](https://www.youtube.com/watch?v=8xJnbsuF4C8) (3 minute video)
 * [Java Registration CLI](https://github.com/atsign-foundation/at\_java/blob/trunk/getting\_started\_guide.md)
 * Dart [at\_onboarding\_cli/at\_activate](https://github.com/atsign-foundation/at\_libraries/tree/trunk/packages/at\_onboarding\_cli#activate\_cli) to activate an owned atSign or [at\_onboarding\_cli/at\_register](https://github.com/atsign-foundation/at\_libraries/tree/trunk/packages/at\_onboarding\_cli#register\_cli) to generate a new free atSign.
 
