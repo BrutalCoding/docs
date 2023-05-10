@@ -4,8 +4,6 @@ description: Pub/sub events with atRecords
 
 # Events
 
-* Notify / monitor
-
 {% tabs %}
 {% tab title="Flutter / Dart" %}
 In Dart, the AtClient is stored within the AtClientManager. Once an atSign has been [onboarded](onboarding.md), you will be able to access the AtClientManager for its associated atSign.
@@ -29,7 +27,7 @@ An example of this pattern can be found in [at\_daemon\_server](https://github.c
 
 {% endtab %}
 
-{% tab title="Untitled" %}
+{% tab title="Other Clients" %}
 Coming soon!
 {% endtab %}
 {% endtabs %}
