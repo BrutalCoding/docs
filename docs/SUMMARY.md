@@ -32,7 +32,7 @@
 * [Ssh! No Ports](solutions/ssh-no-ports.md)
   * [Installation](solutions/ssh-no-ports/installation.md)
   * [Use cases](solutions/ssh-no-ports/use-cases.md)
-* [Video Streams](solutions/video-streams.md)
+* [Control Plane / RPC](solutions/control-plane-rpc.md)
 * [atmospherePro](solutions/atmospherepro.md)
 * [IoT deployments](solutions/iot-deployments.md)
 
