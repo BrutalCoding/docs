@@ -91,7 +91,7 @@ There are two parts to reading data using the atClient SDK:
 1. Scanning for and listing out the atIDs for atRecords that can be retrieved
 2. Retrieving the atRecord for a given atID
 
-#### Scanning and listing atIDs
+#### 1. Scanning and listing atIDs
 
 There are two methods available for scanning and listing atIDs:
 
@@ -140,9 +140,34 @@ All atIDs which end with ".wavi" in the record identifier part:
 List<AtKey> waviIDs = await atClient.getAtKeys(regex: '^.*\.wavi@.+$');
 ```
 
+#### 2. Retrieving atRecords by atID
+
+To retrieve an atRecord, you must know the atID and pass it to the `get` method.
+
+<pre class="language-dart" data-title="get signature"><code class="lang-dart">Future&#x3C;AtValue> get(
+    AtKey key,
+    {bool <a data-footnote-ref href="#user-content-fn-2">isDedicated</a> = false,
+    GetRequestOptions? getRequestOptions});
+</code></pre>
+
+Calling this function will return an AtValue, and update the atID passed to it with any changes to the metadata.
+
+#### Usage
+
+<pre class="language-dart"><code class="lang-dart">AtValue atValue = await atClient.get(myID);
+String? text = atValue.<a data-footnote-ref href="#user-content-fn-3">value</a>;
+</code></pre>
+
 ### Deleting Data
 
 To delete data, simply call the `delete` method with the atID for the atRecord to delete.
+
+<pre class="language-dart" data-title="delete signature"><code class="lang-dart">Future&#x3C;bool> delete(
+    AtKey key,
+    {bool <a data-footnote-ref href="#user-content-fn-4">isDedicated</a> = false});
+</code></pre>
+
+#### Usage
 
 ```dart
 bool res = await atClient.delete(myID);
@@ -165,3 +190,9 @@ Coming soon!
 {% endtabs %}
 
 [^1]: This has been deprecated, and will be ignored.
+
+[^2]: This has been deprecated, and will be ignored.
+
+[^3]: If metaData.isBinary is true, then this will be a List\<int>.
+
+[^4]: This has been deprecated, and will be ignored.
