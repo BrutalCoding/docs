@@ -15,7 +15,7 @@
   * [Specification (GitHub)](https://github.com/atsign-foundation/at\_protocol/blob/trunk/specification/at\_protocol\_specification.md)
 * [The atClient SDK](learn/sdk/README.md)
   * [Onboarding](learn/sdk/onboarding.md)
-  * [atID Reference](learn/sdk/atid-reference/README.md)
+  * [atID Reference](learn/sdk/atid-reference.md)
     * [atMetadata Reference](learn/sdk/atid-reference/atmetadata-reference.md)
   * [CRUD Operations](learn/sdk/crud-operations.md)
   * [Events](learn/sdk/events.md)
@@ -30,9 +30,10 @@
 
 ## 🔧 Solutions
 
-* [Ssh! No Ports](solutions/ssh-no-ports.md)
-  * [Installation](solutions/ssh-no-ports/installation.md)
-  * [Use cases](solutions/ssh-no-ports/use-cases.md)
+* [SSH! No Ports](solutions/sshnp/README.md)
+  * [Installation](solutions/sshnp/installation.md)
+  * [Use cases](solutions/sshnp/use-cases.md)
+  * [GitHub Repository](https://github.com/atsign-foundation/sshnoports)
 * [Control Plane / RPC](solutions/control-plane-rpc.md)
 * [atmospherePro](solutions/atmospherepro.md)
 * [IoT deployments](solutions/iot-deployments.md)
