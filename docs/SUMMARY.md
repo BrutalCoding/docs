@@ -31,8 +31,8 @@
 ## 🔧 Solutions
 
 * [SSH! No Ports](solutions/sshnp/README.md)
-  * [Installation](solutions/sshnp/installation.md)
-  * [Use cases](solutions/sshnp/use-cases.md)
+  * [Installation](solutions/ssh-no-ports/installation.md)
+  * [Use cases](solutions/ssh-no-ports/use-cases.md)
   * [GitHub Repository](https://github.com/atsign-foundation/sshnoports)
 * [Control Plane / RPC](solutions/control-plane-rpc.md)
 * [atmospherePro](solutions/atmospherepro.md)
