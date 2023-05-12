@@ -1,6 +1,5 @@
 ---
 description: Configure PlatformIO platforms, frameworks, config files, and your ESP32.
-coverY: 0
 ---
 
 # Step 2 - Setting up your Project
