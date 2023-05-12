@@ -21,10 +21,6 @@
   * [Events](learn/sdk/events.md)
   * [Synchronization](learn/sdk/synchronization.md)
 * [Additional Building Blocks](learn/additional-building-blocks/README.md)
-  * [IT Add-ons](learn/additional-building-blocks/it-add-ons.md)
-  * [IoT Deployment Add-ons](learn/additional-building-blocks/iot-deployment-add-ons.md)
-  * [CLI Tools](learn/additional-building-blocks/cli-tools.md)
-  * [Networking Utilities](learn/additional-building-blocks/networking-utilities.md)
   * [Dart Libraries](learn/additional-building-blocks/dart-libraries.md)
   * [Flutter Widgets](learn/additional-building-blocks/flutter-widgets.md)
 
@@ -37,6 +33,13 @@
 * [Control Plane / RPC](solutions/control-plane-rpc.md)
 * [atmospherePro](solutions/atmospherepro.md)
 * [IoT deployments](solutions/iot-deployments.md)
+
+## Tools & Utilities
+
+* [IoT Deployment Add-ons](tools-and-utilities/iot-deployment-add-ons.md)
+* [IT Add-ons](tools-and-utilities/it-add-ons.md)
+* [CLI Tools](tools-and-utilities/cli-tools.md)
+* [Networking Utilities](tools-and-utilities/networking-utilities.md)
 
 ## 🗒 Tutorials <a href="#examples" id="examples"></a>
 
