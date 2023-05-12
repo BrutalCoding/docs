@@ -40,7 +40,15 @@
 
 ## 🗒 Tutorials <a href="#examples" id="examples"></a>
 
-* [ESP32 Sensor Device + App](examples/esp32-sensor-device-+-app.md)
+* [ESP32 Secure Data Transmission](examples/esp32-arduino/README.md)
+  * [Step 1 - Prerequisites](examples/esp32-arduino/prerequisites.md)
+  * [Step 2 - Setting up your Project](examples/esp32-arduino/setup-project.md)
+  * [Step 3 - Uploading your .atKeys](examples/esp32-arduino/upload-atkeys.md)
+  * [Step 4 - Building & Uploading Your Project](examples/esp32-arduino/build-project.md)
+  * [Step 5 - PKAM Authentication](examples/esp32-arduino/pkam-auth.md)
+  * [Step 6 - Send Data with Java](examples/esp32-arduino/send-java.md)
+  * [Step 7 - Receive Data with Java](examples/esp32-arduino/receive-java.md)
+  * [Step 8 - Send & Receive Data with Flutter](examples/esp32-arduino/send-receive-flutter.md)
 
 ***
 
