@@ -36,10 +36,10 @@
 
 ## Tools & Utilities
 
-* [IoT Deployment Add-ons](tools-and-utilities/iot-deployment-add-ons.md)
-* [IT Add-ons](tools-and-utilities/it-add-ons.md)
-* [CLI Tools](tools-and-utilities/cli-tools.md)
-* [Networking Utilities](tools-and-utilities/networking-utilities.md)
+* [IoT Deployment Add-ons](learn/additional-building-blocks/iot-deployment-add-ons.md)
+* [IT Add-ons](learn/additional-building-blocks/it-add-ons.md)
+* [CLI Tools](learn/additional-building-blocks/cli-tools.md)
+* [Networking Utilities](learn/additional-building-blocks/networking-utilities.md)
 
 ## 🗒 Tutorials <a href="#examples" id="examples"></a>
 

@@ -82,4 +82,4 @@ lib_deps =
 monitor_speed = 115200
 ```
 
-[^1]: Jeremy is the engineer at Atsign who developed the at\_client SDK for Arduino.
+[^1]: Jeremy is the engineer at Atsign who developed the at\_client SDK for PlatformIO.
