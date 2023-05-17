@@ -46,7 +46,7 @@ A unique string used to represent the atRecord.
 
 #### Owner's atSign
 
-The owner (i.e. creator's) atSign for that particular atRecord.
+The owner (i.e. creator's) atSign for that particular atRecord. The shared by atSign of an atRecord is synonymous to the owner atSign of an atRecord.
 
 <details>
 
@@ -94,21 +94,39 @@ The following is a list of reserved atIDs which the atServer requires to functio
 
 #### Public atID
 
-`public:location@alice`
+1. A `public` atID with a record id of `location` shared by `@alice`. This atID typically holds public data that any atSign can access.
+
+`public:location@alice`&#x20;
+
+2. A `public` atID with a record id of `publickey` shared by `@bob`. Note that this is a [reserved atID](atrecord.md#reserved-atids).
+
+`public:publickey@bob`
 
 #### Private atID
+
+1. A `private` atID with a record id of `pk1` shared by `@alice`.
 
 `privatekey:pk1@alice`
 
 #### Shared atID
 
+1. A `shared` atID with a record id of `phone` shared with `@bob`, shared by `@alice`.
+
 `@bob:phone@alice`
 
+2. A `shared` atID with the record id of `name`, a namespace of `wavi`, shared with `@alice`, and shared by `@bob`.
+
+`@alice:name.wavi@bob`
+
 #### Internal atID
+
+1. An `internal` atID with a record id of `_latestnotificationid`, namespace of `at_skeleton_app` and is shared by `@alice`.
 
 `_latestnotificationid.at_skeleton_app@alice`
 
 #### Cached atID
+
+1. A `cached` atID with a record id of `phone`, shared with `@bob`, and is shared with `@alice`.
 
 `cached:@bob:phone@alice`
 
@@ -118,22 +136,22 @@ The following is a list of reserved atIDs which the atServer requires to functio
 
 Metadata of the atRecord is also stored and describes the following properties of the atValue.
 
-| **Meta Attribute** | **Auto create?** | **Description**                                                                                                                  |
-| ------------------ | ---------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| availableFrom      | Yes              | A Date and Time derived from the ttb (now + ttb). A Key should be only available after availableFrom.                            |
-| ccd                | No               | Indicates if a cached key needs to be deleted when the atSign user who has originally shared it deletes it.                      |
-| createdBy          | Yes              | atSign that has created the key                                                                                                  |
-| createdOn          | Yes              | Date and time when the key has been created.                                                                                     |
-| expiresOn          | Yes              | A Date and Time derived from the ttl (now + ttl). A Key should be auto deleted once it expires.                                  |
-| isBinary           | No               | True if the value is a binary value.                                                                                             |
-| isCached           | No               | True if the key can be cached by another atSign user.                                                                            |
-| isEncrypted        | No               | True if the value is encrypted                                                                                                   |
-| refreshAt          | No               | A Date and Time derived from the ttr. The time at which the key gets refreshed.                                                  |
-| sharedWith         | No               | atSign of the user with whom the key has been shared. Can be null if not shared with anyone.                                     |
-| updatedOn          | Yes              | Date and time when the key has been last updated.                                                                                |
-| ttb                | No               | Time to birth in milliseconds.                                                                                                   |
-| ttl                | No               | Time to live in milliseconds.                                                                                                    |
-| ttr                | No               | Time in milliseconds after which the cached key needs to be refreshed. A ttr of -1 indicates that the key can be cached forever. |
+| **Meta Attribute** | **Auto create?** | **Description**                                                                                                                                                                                                                                                                                                                             |
+| ------------------ | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| availableFrom      | Yes              | A Date and Time derived from the ttb (now + ttb). A Key should be only available after availableFrom.                                                                                                                                                                                                                                       |
+| ccd                | No               | Indicates if a cached key needs to be deleted when the atSign user who has originally shared it deletes it.                                                                                                                                                                                                                                 |
+| createdBy          | Yes              | atSign that has created the key                                                                                                                                                                                                                                                                                                             |
+| createdOn          | Yes              | Date and time when the key has been created.                                                                                                                                                                                                                                                                                                |
+| expiresOn          | Yes              | A Date and Time derived from the ttl (now + ttl). A Key should be auto deleted once it expires.                                                                                                                                                                                                                                             |
+| isBinary           | No               | True if the value is a binary value.                                                                                                                                                                                                                                                                                                        |
+| isCached           | No               | True if the key is cached.                                                                                                                                                                                                                                                                                                                  |
+| isEncrypted        | No               | True if the value is encrypted.                                                                                                                                                                                                                                                                                                             |
+| refreshAt          | No               | A Date and Time derived from the ttr. The time at which the key gets refreshed.                                                                                                                                                                                                                                                             |
+| sharedWith         | No               | atSign of the user with whom the key has been shared. Can be null if not shared with anyone.                                                                                                                                                                                                                                                |
+| updatedOn          | Yes              | Date and time when the key has been last updated.                                                                                                                                                                                                                                                                                           |
+| ttb                | No               | Time to birth in milliseconds.                                                                                                                                                                                                                                                                                                              |
+| ttl                | No               | Time to live in milliseconds.                                                                                                                                                                                                                                                                                                               |
+| ttr                | No               | Time in milliseconds after which the cached key needs to be refreshed. A ttr of -1 indicates that the key can be cached forever. ttr of 0 indicates do not refresh. ttr of > 0 will refresh the key. ttr of null indicates the key is impossible to cache, hence, refreshing does not make sense (which has the same effect as a ttr of 0). |
 
 ## atValue
 
