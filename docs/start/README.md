@@ -14,10 +14,10 @@ If your needs fall under one of these categories, look no further than here!
 
 Some solutions using Atsign's tech worth looking into
 
-<table data-card-size="large" data-column-title-hidden data-view="cards"><thead><tr><th data-card-target data-type="content-ref">Link</th><th>Description</th></tr></thead><tbody><tr><td><a href="../solutions/sshnp/">sshnp</a></td><td>sshnp desc</td></tr><tr><td><a href="../solutions/control-plane-rpc.md">control-plane-rpc.md</a></td><td>Video streams desc.</td></tr><tr><td><a href="../solutions/atmospherepro.md">atmospherepro.md</a></td><td>atmospherePro desc</td></tr><tr><td><a href="../solutions/iot-deployments.md">iot-deployments.md</a></td><td>Iot deployment desc</td></tr></tbody></table>
+<table data-card-size="large" data-column-title-hidden data-view="cards"><thead><tr><th data-card-target data-type="content-ref">Link</th><th>Description</th></tr></thead><tbody><tr><td><a href="broken-reference">Broken link</a></td><td>sshnp desc</td></tr><tr><td><a href="broken-reference">Broken link</a></td><td>Video streams desc.</td></tr><tr><td><a href="broken-reference">Broken link</a></td><td>atmospherePro desc</td></tr><tr><td><a href="broken-reference">Broken link</a></td><td>Iot deployment desc</td></tr></tbody></table>
 
 ## Custom Solutions
 
 Learn and create your own end-to-end solution using Atsign's open-source technology
 
-<table data-column-title-hidden data-view="cards"><thead><tr><th data-card-target data-type="content-ref">Link</th><th>Description</th></tr></thead><tbody><tr><td><a href="../learn/core/">core</a></td><td>core description</td></tr><tr><td><a href="../learn/sdk/">sdk</a></td><td>SDK description</td></tr><tr><td><a href="../learn/additional-building-blocks/">additional-building-blocks</a></td><td>blocks description</td></tr></tbody></table>
+<table data-column-title-hidden data-view="cards"><thead><tr><th data-card-target data-type="content-ref">Link</th><th>Description</th></tr></thead><tbody><tr><td><a href="../learn/core/">core</a></td><td>core description</td></tr><tr><td><a href="../learn/sdk/">sdk</a></td><td>SDK description</td></tr><tr><td><a href="broken-reference">Broken link</a></td><td>blocks description</td></tr></tbody></table>

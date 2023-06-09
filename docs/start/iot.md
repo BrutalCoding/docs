@@ -16,7 +16,7 @@ We aim to provide off-the-shelf solutions for the most-frequently-required use c
 
 #### Ssh! No ports
 
-Our first production ready solution is [SSH! No ports](../solutions/sshnp/), which provides a way to ssh to a remote linux host/device without that device having any open ports (not even 22) on external interfaces. All network connectivity is outbound and there is no need to know the IP address the device has been given. As long as the device has an IP address, DNS and Internet access, you will be able to connect to it.
+Our first production ready solution is [SSH! No ports](broken-reference), which provides a way to ssh to a remote linux host/device without that device having any open ports (not even 22) on external interfaces. All network connectivity is outbound and there is no need to know the IP address the device has been given. As long as the device has an IP address, DNS and Internet access, you will be able to connect to it.
 
 Downloads are available [here](https://github.com/atsign-foundation/sshnoports/releases).
 
@@ -70,7 +70,7 @@ Currently supported languages include:
 
 To help you get started, in addition to the SDK documentation itself, we also have several open-source examples that you can use as a basis for your solution.
 
-* [SSH! No ports](../solutions/sshnp/)
+* [SSH! No ports](broken-reference)
 * [GPS demo](https://github.com/atsign-foundation/at\_gps\_demo) - end to end encrypted GPS using gpsd and thingsboard as the end points
 * [at\_nautel\_snmp](https://github.com/cconstab/at\_nautel\_snmp) - Monitor a Nautel Transmitter securely, via the atPlatform
 * [catweb](https://github.com/cconstab/catweb) - for ham radio operators to provide near real-time frequency and modulation mode being used to a website, so other operators know where you are listening

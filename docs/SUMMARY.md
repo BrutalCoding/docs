@@ -20,26 +20,6 @@
   * [CRUD Operations](learn/sdk/crud-operations.md)
   * [Events](learn/sdk/events.md)
   * [Synchronization](learn/sdk/synchronization.md)
-* [Additional Building Blocks](learn/additional-building-blocks/README.md)
-  * [Dart Libraries](learn/additional-building-blocks/dart-libraries.md)
-  * [Flutter Widgets](learn/additional-building-blocks/flutter-widgets.md)
-
-## 🔧 Solutions
-
-* [SSH! No Ports](solutions/sshnp/README.md)
-  * [Installation](solutions/ssh-no-ports/installation.md)
-  * [Use cases](solutions/ssh-no-ports/use-cases.md)
-  * [GitHub Repository](https://github.com/atsign-foundation/sshnoports)
-* [Control Plane / RPC](solutions/control-plane-rpc.md)
-* [atmospherePro](solutions/atmospherepro.md)
-* [IoT deployments](solutions/iot-deployments.md)
-
-## Tools & Utilities
-
-* [IoT Deployment Add-ons](learn/additional-building-blocks/iot-deployment-add-ons.md)
-* [IT Add-ons](learn/additional-building-blocks/it-add-ons.md)
-* [CLI Tools](learn/additional-building-blocks/cli-tools.md)
-* [Networking Utilities](learn/additional-building-blocks/networking-utilities.md)
 
 ## 🗒 Tutorials <a href="#examples" id="examples"></a>
 
@@ -59,11 +39,3 @@
   * [Question 1](faq/question-1.md)
   * [Question 2](faq/question-2.md)
 * [Main site](https://atsign.com/)
-
-## ❌ To be removed
-
-* [Key Basics](to-be-removed/key-basics.md)
-* [Example Building Blocks](examples/examples.md)
-* [Flutter](to-be-removed/flutter/README.md)
-  * [AtClientPreference](to-be-removed/flutter/atclientpreference.md)
-  * [AtClientManager](to-be-removed/flutter/atclientmanager.md)
