@@ -3,7 +3,7 @@
 {% hint style="warning" %}
 atID was previous called "AtKey".
 
-Please note that any reference to the word "AtKey" in this document is not associated cryptographic keys.
+Please note that any reference to the word "AtKey" in this document is not associated with cryptographic keys.
 {% endhint %}
 
 {% hint style="warning" %}

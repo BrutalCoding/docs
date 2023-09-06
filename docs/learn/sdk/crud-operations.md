@@ -7,7 +7,7 @@ description: Basic create, read, update and delete operations with atRecords
 {% hint style="warning" %}
 atID was previous called "AtKey".
 
-Please note that any reference to the word "AtKey" in this document is not associated cryptographic keys.
+Please note that any reference to the word "AtKey" in this document is not associated with cryptographic keys.
 {% endhint %}
 
 {% tabs %}
