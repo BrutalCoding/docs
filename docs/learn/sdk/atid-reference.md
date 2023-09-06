@@ -16,7 +16,7 @@ If you are unfamiliar with atIDs please read [this](../core/atrecord.md#atid) fi
 {% tab title="Flutter / Dart" %}
 The [at\_commons](https://pub.dev/packages/at\_commons) package contains common elements used in a number of Atsign's Flutter and Dart packages. This package needs to be included in the application in order to create atIDs.
 
-## Installation
+### Installation
 
 First add the package to your project:
 
@@ -37,7 +37,7 @@ dependencies:
 ```
 {% endcode %}
 
-## Usage
+### Usage
 
 {% hint style="warning" %}
 atID was previously called "AtKey".
@@ -47,7 +47,7 @@ The code has not fully been migrated to reflect this name change, so please assu
 
 See below for how to create the various types of atIDs.
 
-### Public atID
+#### Public atID
 
 To create a public atID, first use the `AtKey.public` builder to configure it, then call `.build` to create it.
 
@@ -60,7 +60,7 @@ static PublicKeyBuilder public(String key,
 
 The `build` method on `PublicKeyBuilder` takes no parameters.
 
-#### **Example**
+**Example**
 
 `public:phone.wavi@alice`
 
@@ -70,7 +70,7 @@ AtKey myPublicID = AtKey.public('phone', namespace: 'wavi', sharedBy: '@alice').
 ```
 {% endcode %}
 
-### Self atID
+#### Self atID
 
 To create a self atID, first use the `AtKey.self` builder to configure it, then call `.build` to create it.
 
@@ -83,7 +83,7 @@ static SelfKeyBuilder self(String key,
 
 The `build` method on `SelfKeyBuilder` takes no parameters.
 
-#### Example
+**Example**
 
 `phone.wavi@alice`
 
@@ -93,7 +93,7 @@ AtKey mySelfID = AtKey.self('phone', namespace: 'wavi', sharedBy: '@alice').buil
 ```
 {% endcode %}
 
-### Private atID
+#### Private atID
 
 To create a private atID, first use the `AtKey.private` builder to configure it, then call `.build` to create it.
 
@@ -109,7 +109,7 @@ static PrivateKeyBuilder private(String key, {String? namespace})
 
 The `build` method on `PrivateKeyBuilder` takes no parameters.
 
-#### Example
+**Example**
 
 `privatekey:phone.wavi@alice`
 
@@ -119,7 +119,7 @@ AtKey myPrivateID = AtKey.private('phone', namespace: 'wavi').build();
 ```
 {% endcode %}
 
-### Shared atID
+#### Shared atID
 
 To create a shared atID, first use the `AtKey.shared` builder to configure it, then call `.build` to create it.
 
@@ -132,7 +132,7 @@ static SharedKeyBuilder shared(String key,
 
 The `build` method on `SharedKeyBuilder` takes no parameters.
 
-#### Example
+**Example**
 
 `@bob:phone.wavi@alice`
 
@@ -143,7 +143,7 @@ AtKey sharedKey = (AtKey.shared('phone', 'wavi')
 ```
 {% endcode %}
 
-#### Caching shared atIDs
+**Caching shared atIDs**
 
 To cache a shared atID, you can do a [cascade](https://dart.dev/language/operators#cascade-notation) call on `SharedKeyBuilder.cache`.
 
@@ -156,7 +156,7 @@ AtKey atKey = (AtKey.shared('phone', namespace: 'wavi', sharedBy: '@alice')
 ```
 {% endcode %}
 
-## API Docs
+### API Docs
 
 You can find the API reference for the entire package available on [pub](https://pub.dev/documentation/at\_commons/latest/).
 

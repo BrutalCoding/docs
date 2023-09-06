@@ -14,7 +14,7 @@ Please note that any reference to the word "AtKey" in this document is not assoc
 {% tab title="Flutter / Dart" %}
 In Dart, the AtClient is stored within the AtClientManager. Once an atSign has been [onboarded](onboarding.md), you will be able to access the AtClientManager for its associated atSign.
 
-## AtClientManager
+### AtClientManager
 
 AtClientManager is a [singleton](https://en.wikipedia.org/wiki/Singleton\_pattern) model. When `AtClientManager.getInstance()` is called, it will get the AtClientManager instance for the last onboarded atSign.
 
@@ -23,12 +23,12 @@ AtClientManager atClientManager = AtClientManager.getInstance();
 ```
 
 {% hint style="info" %}
-If you need simultaneous access to multiple atClients, you need to create a new [isolate](https://dart.dev/language/concurrency#how-isolates-work) for each additional atClient, and onboard its atSign within the isolate.&#x20;
+If you need simultaneous access to multiple atClients, you need to create a new [isolate](https://dart.dev/language/concurrency#how-isolates-work) for each additional atClient, and onboard its atSign within the isolate.
 
 An example of this pattern can be found in [at\_daemon\_server](https://github.com/atsign-foundation/at\_services/tree/trunk/packages/at\_daemon\_server/lib/src/server).
 {% endhint %}
 
-## AtClient
+### AtClient
 
 As previously mentioned, the AtClientManager stores the actual AtClient itself. You can retrieve the `AtClient` by calling `atClientManager.atClient`.
 
@@ -36,7 +36,7 @@ As previously mentioned, the AtClientManager stores the actual AtClient itself. 
 AtClient atClient = atClientManager.atClient;
 ```
 
-### atID
+#### atID
 
 Before you can do anything with an atRecord, you need an [atID](../core/atrecord.md#atidentifier) to represent it.
 
@@ -48,7 +48,7 @@ The following examples use the self atID `phone.wavi@<current atSign>`
 It is up to the developer to modify the atID according to their use case.
 {% endhint %}
 
-### Creating / Updating Data
+#### Creating / Updating Data
 
 To create data the `put` method is used, this method accepts text (`String`) or binary (`List<int>`).
 
@@ -69,11 +69,11 @@ bool res = await atClient.put(myID, dataToStore);
 <strong>    PutRequestOptions? putRequestOptions});
 </strong></code></pre>
 
-#### Strongly Typed Methods
+**Strongly Typed Methods**
 
 Since `put` accepts both `String` or `List<int>` as a value, the typing is dynamic. atClient also contains the strongly typed `putText` which only accepts `String` for the value, or `putBinary` which only accepts `List<int>` for the value.
 
-#### To update existing data
+**To update existing data**
 
 Updating existing data is done by doing a put to the same atID, this will overwrite any existing data stored in the atRecord.
 
@@ -84,14 +84,14 @@ bool res = await atClient.put(myID, binaryData);
 
 The bytes `[1, 2, 3, 4]` have now replaced the string `"123-456-7890"`.
 
-### Reading Data
+#### Reading Data
 
 There are two parts to reading data using the atClient SDK:
 
 1. Scanning for and listing out the atIDs for atRecords that can be retrieved
 2. Retrieving the atRecord for a given atID
 
-#### 1. Scanning and listing atIDs
+**1. Scanning and listing atIDs**
 
 There are two methods available for scanning and listing atIDs:
 
@@ -126,7 +126,7 @@ _showHiddenKeys_
 
 A boolean flag to enable the inclusion of hidden atIDs (default = `false`)
 
-#### Usage
+**Usage**
 
 Get all available (non-hidden) atIDs:
 
@@ -140,40 +140,46 @@ All atIDs which end with ".wavi" in the record identifier part:
 List<AtKey> waviIDs = await atClient.getAtKeys(regex: '^.*\.wavi@.+$');
 ```
 
-#### 2. Retrieving atRecords by atID
+**2. Retrieving atRecords by atID**
 
 To retrieve an atRecord, you must know the atID and pass it to the `get` method.
 
-<pre class="language-dart" data-title="get signature"><code class="lang-dart">Future&#x3C;AtValue> get(
+{% code title="get signature" %}
+```dart
+Future<AtValue> get(
     AtKey key,
-    {bool <a data-footnote-ref href="#user-content-fn-2">isDedicated</a> = false,
+    {bool isDedicated = false,
     GetRequestOptions? getRequestOptions});
-</code></pre>
+```
+{% endcode %}
 
 Calling this function will return an AtValue, and update the atID passed to it with any changes to the metadata.
 
-#### Usage
+**Usage**
 
 <pre class="language-dart"><code class="lang-dart">AtValue atValue = await atClient.get(myID);
-String? text = atValue.<a data-footnote-ref href="#user-content-fn-3">value</a>;
+String? text = atValue.<a data-footnote-ref href="#user-content-fn-2">value</a>;
 </code></pre>
 
-### Deleting Data
+#### Deleting Data
 
 To delete data, simply call the `delete` method with the atID for the atRecord to delete.
 
-<pre class="language-dart" data-title="delete signature"><code class="lang-dart">Future&#x3C;bool> delete(
+{% code title="delete signature" %}
+```dart
+Future<bool> delete(
     AtKey key,
-    {bool <a data-footnote-ref href="#user-content-fn-4">isDedicated</a> = false});
-</code></pre>
+    {bool isDedicated = false});
+```
+{% endcode %}
 
-#### Usage
+**Usage**
 
 ```dart
 bool res = await atClient.delete(myID);
 ```
 
-## API Docs
+### API Docs
 
 You can find the API reference for the entire package available on [pub](https://pub.dev/documentation/at\_client/latest/).
 
@@ -189,10 +195,9 @@ Coming soon!
 {% endtab %}
 {% endtabs %}
 
+1. This has been deprecated, and will be ignored.
+2. This has been deprecated, and will be ignored.
+
 [^1]: This has been deprecated, and will be ignored.
 
-[^2]: This has been deprecated, and will be ignored.
-
-[^3]: If metaData.isBinary is true, then this will be a List\<int>.
-
-[^4]: This has been deprecated, and will be ignored.
+[^2]: If metaData.isBinary is true, then this will be a List\<int>.

@@ -8,7 +8,7 @@ description: Pub/sub events with atRecords
 {% tab title="Flutter / Dart" %}
 In Dart, the AtClient is stored within the AtClientManager. Once an atSign has been [onboarded](onboarding.md), you will be able to access the AtClientManager for its associated atSign.
 
-## AtClientManager
+### AtClientManager
 
 AtClientManager is a [singleton](https://en.wikipedia.org/wiki/Singleton\_pattern) model. When `AtClientManager.getInstance()` is called, it will get the AtClientManager instance for the last onboarded atSign.
 
@@ -17,12 +17,12 @@ AtClientManager atClientManager = AtClientManager.getInstance();
 ```
 
 {% hint style="info" %}
-If you need simultaneous access to multiple atClients, you need to create a new [isolate](https://dart.dev/language/concurrency#how-isolates-work) for each additional atClient, and onboard its atSign within the isolate.&#x20;
+If you need simultaneous access to multiple atClients, you need to create a new [isolate](https://dart.dev/language/concurrency#how-isolates-work) for each additional atClient, and onboard its atSign within the isolate.
 
 An example of this pattern can be found in [at\_daemon\_server](https://github.com/atsign-foundation/at\_services/tree/trunk/packages/at\_daemon\_server/lib/src/server).
 {% endhint %}
 
-## AtClient
+### AtClient
 
 As previously mentioned, the AtClientManager stores the actual AtClient itself. You can retrieve the `AtClient` by calling `atClientManager.atClient`.
 
@@ -30,7 +30,7 @@ As previously mentioned, the AtClientManager stores the actual AtClient itself. 
 AtClient atClient = atClientManager.atClient;
 ```
 
-### atID
+#### atID
 
 Before you can do anything with an atRecord, you need an [atID](../core/atrecord.md#atidentifier) to represent it.
 
@@ -41,10 +41,6 @@ The following examples use the self atID `phone.wavi@<current atSign>`
 
 It is up to the developer to modify the atID according to their use case.
 {% endhint %}
-{% endtab %}
-
-{% tab title="Java" %}
-
 {% endtab %}
 
 {% tab title="Other Clients" %}

@@ -35,7 +35,5 @@
 
 ***
 
-* [FAQ](faq/README.md)
-  * [Question 1](faq/question-1.md)
-  * [Question 2](faq/question-2.md)
-* [Main site](https://atsign.com/)
+* [atsign.com](https://atsign.com/)
+* [noports.com](https://noports.com)

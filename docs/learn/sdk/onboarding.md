@@ -14,17 +14,17 @@ Depending on the SDK you are using, the process for onboarding varies.
 
 {% tabs %}
 {% tab title="Flutter / Dart" %}
-## Flutter
+### Flutter
 
-In Flutter, we provide the [at\_onboarding\_flutter](https://pub.dev/packages/at\_onboarding\_flutter) package which handles secure management of these secret keys.&#x20;
+In Flutter, we provide the [at\_onboarding\_flutter](https://pub.dev/packages/at\_onboarding\_flutter) package which handles secure management of these secret keys.
 
 {% hint style="info" %}
 If you are developing a new Flutter app, we recommend that you use [at\_app](https://pub.dev/packages/at\_app) to generate an app skeleton with the at\_onboarding\_flutter package preconfigured.
 {% endhint %}
 
-### Manual Configuration
+#### Manual Configuration
 
-#### Installation
+**Installation**
 
 First add the package to your project:
 
@@ -44,7 +44,7 @@ dependencies:
 ```
 {% endcode %}
 
-#### Usage
+**Usage**
 
 Simply call the [`onboard`](https://pub.dev/documentation/at\_onboarding\_flutter/latest/at\_onboarding/AtOnboarding/onboard.html) method whenever you want your app to open the onboarding widget.
 
@@ -73,13 +73,13 @@ AtOnboarding.onboard(
 `AtEnv` comes from [at\_app\_flutter](https://pub.dev/packages/at\_app\_flutter) which also comes in the preconfigured app skeleton from [at\_app](https://pub.dev/packages/at\_app).
 {% endhint %}
 
-#### API Docs
+**API Docs**
 
 You can find the API reference for the entire package available on [pub](https://pub.dev/documentation/at\_onboarding\_flutter/latest/).
 
 The `AtOnboarding` class API reference is available [here](https://pub.dev/documentation/at\_onboarding\_flutter/latest/at\_onboarding/AtOnboarding-class.html).
 
-## Dart
+### Dart
 
 Coming soon!
 {% endtab %}
@@ -94,6 +94,3 @@ Rest coming soon!
 Coming soon!
 {% endtab %}
 {% endtabs %}
-
-
-
