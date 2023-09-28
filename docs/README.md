@@ -1,4 +1,5 @@
 ---
+description: This is the home page.
 layout: landing
 ---
 
@@ -7,4 +8,4 @@ layout: landing
 **Purpose of this Page:**
 
 * General purpose (but tech focused) landing page
-* Goal should be to get people to [start](broken-reference)
+* Goal should be to get people to [start](broken-reference/)
