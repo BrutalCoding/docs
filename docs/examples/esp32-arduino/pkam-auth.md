@@ -12,11 +12,11 @@ Step 5 - PKAM Authentication can also be found in [video](https://www.youtube.co
 Step 5 - Pkam Authentication
 {% endembed %}
 
-PKAM Authentication is the process of authenticating an application's session into an atServer. A PKAM authenticated session is required for your ESP32 to run atServer operations (also known as verbs) to put and get atRecords and send data to other atSigns. More on PKAM Authentication can be read [here](../../learn/core/).
+PKAM Authentication is the process of authenticating an application's session into an atServer. A PKAM authenticated session is required for your ESP32 to run atServer operations (also known as verbs) to put and get atRecords and send data to other atSigns. More on PKAM Authentication can be read [here](../../core/).
 
 ## 1. Creating `constants.h`
 
-1. Create a `constants.h` header file under the `include/` folder in our project.&#x20;
+1. Create a `constants.h` header file under the `include/` folder in our project.
 2. Define your WiFi's SSID and Password. This can be your home WiFi or your own personal hotspot.
 
 ```cpp
@@ -40,7 +40,7 @@ PKAM Authentication is the process of authenticating an application's session in
 ```
 {% endcode %}
 
-2. Add the following code inside `void setup() {}` to PKAM authenticate. Be sure to change the atSign to the corresponding atSign that you've uploaded the keys with in [Step 3](upload-atkeys.md).&#x20;
+2. Add the following code inside `void setup() {}` to PKAM authenticate. Be sure to change the atSign to the corresponding atSign that you've uploaded the keys with in [Step 3](upload-atkeys.md).
 
 {% code title="main.cpp" %}
 ```cpp

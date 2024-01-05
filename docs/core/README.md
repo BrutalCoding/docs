@@ -6,7 +6,7 @@ description: An overview of Atsign's core pillars of technology
 
 ## Overview
 
-<figure><img src="../../.gitbook/assets/core-overview-simple.png" alt="Diagram of Atsign&#x27;s Core Technology"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/core-overview-simple.png" alt="Diagram of Atsign&#x27;s Core Technology"><figcaption></figcaption></figure>
 
 <details>
 
@@ -22,7 +22,7 @@ The **atProtocol** is the _application layer protocol_ used to communicate with 
 
 ## atServer
 
-An atServer is a private datastore for storing encrypted data owned by an atSign, and a rendezvous point for information exchange. An atServer is responsible for the delivery of encrypted information to other atServers, from which the owners of those atSigns can then retrieve the data.&#x20;
+An atServer is a private datastore for storing encrypted data owned by an atSign, and a rendezvous point for information exchange. An atServer is responsible for the delivery of encrypted information to other atServers, from which the owners of those atSigns can then retrieve the data.
 
 {% hint style="info" %}
 Unless explicitly made public, atServers only store encrypted data and do not have access to the cryptographic keys, nor the ability to decrypt the stored information.
@@ -30,7 +30,7 @@ Unless explicitly made public, atServers only store encrypted data and do not ha
 
 <details>
 
-<summary> atServer Functionality</summary>
+<summary>atServer Functionality</summary>
 
 * Cryptographic authentication of client devices
 * Cryptographic authentication of other atServers.
@@ -43,11 +43,9 @@ Unless explicitly made public, atServers only store encrypted data and do not ha
 
 </details>
 
-
-
 ## atDirectory
 
-In order for an atSign to communicate with another one on the internet, we need to locate the atServer that can send and receive information securely on its behalf.&#x20;
+In order for an atSign to communicate with another one on the internet, we need to locate the atServer that can send and receive information securely on its behalf.
 
 The location of an atServer is found using the atDirectory service (`root.atsign.org:64`). This directory returns the DNS address and port number of the atServer for any atSign that it has a record for. The atDirectory service contains no information about the owner of the atSign.
 

@@ -9,7 +9,7 @@ Please note that any reference to the word "AtKey" in this document is not assoc
 {% hint style="warning" %}
 This article explains how to create an atID in the atClient SDK.
 
-If you are unfamiliar with atIDs please read [this](../core/atrecord.md#atid) first.
+If you are unfamiliar with atIDs please read [this](../../core/atrecord.md#atid) first.
 {% endhint %}
 
 {% tabs %}
