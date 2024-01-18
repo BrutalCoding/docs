@@ -1,17 +1,16 @@
 # Table of contents
 
 * [🏠 Atsign Docs](README.md)
-* [Core Technology](core/README.md)
-  * [atSign](core/atsign.md)
-  * [atRecord](core/atrecord.md)
-  * [Specification (GitHub)](https://github.com/atsign-foundation/at\_protocol/blob/trunk/specification/at\_protocol\_specification.md)
-* [The atSDK](sdk/README.md)
-  * [Onboarding](sdk/onboarding.md)
-  * [atID Reference](sdk/atid-reference/README.md)
-    * [atMetadata Reference](sdk/atid-reference/atmetadata-reference.md)
-  * [CRUD Operations](sdk/crud-operations.md)
-  * [Events](sdk/events.md)
-  * [Synchronization](sdk/synchronization.md)
+* [Core Technology](learn/core/README.md)
+  * [atSign](learn/core/atsign.md)
+  * [atRecord](learn/core/atrecord.md)
+* [The atSDK](learn/sdk/README.md)
+  * [Onboarding](learn/sdk/onboarding.md)
+  * [atID Reference](learn/sdk/atid-reference.md)
+    * [atMetadata Reference](learn/sdk/atid-reference/atmetadata-reference.md)
+  * [CRUD Operations](learn/sdk/crud-operations.md)
+  * [Events](learn/sdk/events.md)
+  * [Synchronization](learn/sdk/synchronization.md)
 
 ## 🗒 Tutorials <a href="#examples" id="examples"></a>
 

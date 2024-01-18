@@ -5,7 +5,7 @@ description: The format atServers use to store and share data.
 # atRecord
 
 {% hint style="info" %}
-At Atsign, whenever we mention the word "key" assume we are talking about a cryptographic key unless otherwise stated.&#x20;
+At Atsign, whenever we mention the word "key" assume we are talking about a cryptographic key unless otherwise stated.
 
 For the time being this is not strictly true, as we are currently migrating the identifier portion of an atRecord from the name "atKey" to the name "atID".
 {% endhint %}
@@ -48,7 +48,7 @@ The owner (i.e. creator's) atSign for that particular atRecord. The shared by at
 
 1. Length of an atID should not be more than 240 characters\
    (a limitation of the current implementation of the atServer, not a protocol limitation)
-2. A maximum of 55  7-bit characters for the atSign
+2. A maximum of 55 7-bit characters for the atSign
 3. Allowed characters in an entity are: `[\w._,-"']`
 4. Namespace is mandatory in the current implementation of the protocol\
    i.e entity must follow the notation: `<identifier>.<namespace>`
@@ -56,8 +56,6 @@ The owner (i.e. creator's) atSign for that particular atRecord. The shared by at
 6. Visibility scope and owner cannot be the same for a shared atID
 7. Reserved atIDs cannot be [modified](../sdk/crud-operations.md) or [notified](../sdk/events.md)
 8. For newly created atIDs, the owner must match the current atSign
-
-
 
 </details>
 
@@ -86,23 +84,23 @@ The following is a list of reserved atIDs which the atServer requires to functio
 
 <summary>Example atIDs</summary>
 
-#### Public atID
+**Public atID**
 
 1. A `public` atID with a record id of `location` shared by `@alice`. This atID typically holds public data that any atSign can access.
 
-`public:location@alice`&#x20;
+`public:location@alice`
 
 2. A `public` atID with a record id of `publickey` shared by `@bob`. Note that this is a [reserved atID](atrecord.md#reserved-atids).
 
 `public:publickey@bob`
 
-#### Private atID
+**Private atID**
 
 1. A `private` atID with a record id of `pk1` shared by `@alice`.
 
 `privatekey:pk1@alice`
 
-#### Shared atID
+**Shared atID**
 
 1. A `shared` atID with a record id of `phone` shared with `@bob`, shared by `@alice`.
 
@@ -112,13 +110,13 @@ The following is a list of reserved atIDs which the atServer requires to functio
 
 `@alice:name.wavi@bob`
 
-#### Internal atID
+**Internal atID**
 
 1. An `internal` atID with a record id of `_latestnotificationid`, namespace of `at_skeleton_app` and is shared by `@alice`.
 
 `_latestnotificationid.at_skeleton_app@alice`
 
-#### Cached atID
+**Cached atID**
 
 1. A `cached` atID with a record id of `phone`, shared with `@bob`, and is shared with `@alice`.
 
@@ -134,7 +132,7 @@ Metadata of the atRecord is also stored and describes the following properties o
 
 ## atValue
 
-Text or binary values can be saved in an atServer.&#x20;
+Text or binary values can be saved in an atServer.
 
 {% hint style="warning" %}
 The size of the value saved in an atServer is bound by the atProtocol's config parameter "maxBufferSize".

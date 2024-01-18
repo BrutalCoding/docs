@@ -6,7 +6,7 @@ description: An overview of Atsign's core pillars of technology
 
 ## Overview
 
-<figure><img src="../.gitbook/assets/core-overview-simple.png" alt="Diagram of Atsign&#x27;s Core Technology"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/core-overview-simple.png" alt="Diagram of Atsign&#x27;s Core Technology"><figcaption></figcaption></figure>
 
 <details>
 
@@ -55,4 +55,4 @@ The location of an atServer is found using the atDirectory service (`root.atsign
 The atProtocol communicates via layer 7, the application layer of the OSI model.
 {% endhint %}
 
-The atProtocol is an application protocol which enables peer-to-peer, end-to-end encrypted data sharing between atSigns. You can learn more about the atProtocol by reading the [specification](https://github.com/atsign-foundation/at\_protocol/blob/trunk/specification/at\_protocol\_specification.md).
+The atProtocol is an application protocol which enables peer-to-peer, end-to-end encrypted data sharing between atSigns. You can learn more about the atProtocol by reading the [specification](https://app.gitbook.com/s/OKcyQuTtJmcTiYSQrNYQ/).

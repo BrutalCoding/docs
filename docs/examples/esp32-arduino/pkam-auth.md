@@ -12,7 +12,7 @@ Step 5 - PKAM Authentication can also be found in [video](https://www.youtube.co
 Step 5 - Pkam Authentication
 {% endembed %}
 
-PKAM Authentication is the process of authenticating an application's session into an atServer. A PKAM authenticated session is required for your ESP32 to run atServer operations (also known as verbs) to put and get atRecords and send data to other atSigns. More on PKAM Authentication can be read [here](../../core/).
+PKAM Authentication is the process of authenticating an application's session into an atServer. A PKAM authenticated session is required for your ESP32 to run atServer operations (also known as verbs) to put and get atRecords and send data to other atSigns. More on PKAM Authentication can be read [here](../../learn/core/).
 
 ## 1. Creating `constants.h`
 

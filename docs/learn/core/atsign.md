@@ -22,7 +22,7 @@ Head to [the registrar site](https://my.atsign.com/go). It is recommended that y
 
 ### How do I generate my associated keys?
 
-There are multiple ways to generate the associated `.atKeys` of an atSign.&#x20;
+There are multiple ways to generate the associated `.atKeys` of an atSign.
 
 * [Using atmospherePro](https://www.youtube.com/watch?v=8xJnbsuF4C8) (3 minute video)
 * [Java Registration CLI](https://github.com/atsign-foundation/at\_java/blob/trunk/getting\_started\_guide.md)
@@ -30,7 +30,6 @@ There are multiple ways to generate the associated `.atKeys` of an atSign.&#x20;
 
 ### Paid atSigns
 
-You can purchase custom atSigns from [the registrar site](https://my.atsign.com/go).&#x20;
+You can purchase custom atSigns from [the registrar site](https://my.atsign.com/go).
 
 <table><thead><tr><th width="106.33333333333331">Cost</th><th width="195">Examples</th><th width="447">Description</th></tr></thead><tbody><tr><td>$10</td><td><code>jeremy_0</code></td><td>A hybrid atSign that contains an underscore and up to four numbers</td></tr><tr><td>$100</td><td><code>atsignexample</code><br><code>atest</code><br><code>tes5</code></td><td>A custom atSign that is any combination of words, numbers, or even emojis (at least five characters, or four characters if it includes a number or emoji)</td></tr><tr><td>$1000</td><td><code>test</code><br><code>four</code><br><code>tes</code><br><code>dog</code></td><td>A custom atSign that is only three or four characters (no numbers).</td></tr><tr><td>$5000</td><td><code>007</code><br><code>te5</code><br><code>r4n</code></td><td>A custom atSign that is only three characters</td></tr></tbody></table>
-
