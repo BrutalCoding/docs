@@ -1,20 +1,20 @@
-# atID Reference
+# atKey Reference
 
 {% hint style="warning" %}
-atID was previous called "AtKey".
+AtKey
 
-Please note that any reference to the word "AtKey" in this document is not associated with cryptographic keys.
+Please note that any reference to the word "AtKey" in this document is not associated with cryptographic keys. The atKey is the "key" of the key-value pair that makes up an atRecord.
 {% endhint %}
 
 {% hint style="warning" %}
-This article explains how to create an atID in the atClient SDK.
+This article explains how to create an atKey in the atClient SDK.
 
-If you are unfamiliar with atIDs please read [this](../core/atrecord.md#atid) first.
+If you are unfamiliar with atKeys please read [this](../core/atrecord.md#atid) first.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Flutter / Dart" %}
-The [at\_commons](https://pub.dev/packages/at\_commons) package contains common elements used in a number of Atsign's Flutter and Dart packages. This package needs to be included in the application in order to create atIDs.
+The [at\_commons](https://pub.dev/packages/at\_commons) package contains common elements used in a number of Atsign's Flutter and Dart packages. This package needs to be included in the application in order to create atKeys.
 
 ### Installation
 
@@ -39,17 +39,11 @@ dependencies:
 
 ### Usage
 
-{% hint style="warning" %}
-atID was previously called "AtKey".
+See below for how to create the various types of atKeys.
 
-The code has not fully been migrated to reflect this name change, so please assume that an "AtKey" is functionally equivalent to an atID.
-{% endhint %}
+#### Public atKey
 
-See below for how to create the various types of atIDs.
-
-#### Public atID
-
-To create a public atID, first use the `AtKey.public` builder to configure it, then call `.build` to create it.
+To create a public atKey, first use the `AtKey.public` builder to configure it, then call `.build` to create it.
 
 {% code title="AtKey.public signature" %}
 ```dart
@@ -70,9 +64,9 @@ AtKey myPublicID = AtKey.public('phone', namespace: 'wavi', sharedBy: '@alice').
 ```
 {% endcode %}
 
-#### Self atID
+#### Self atKey
 
-To create a self atID, first use the `AtKey.self` builder to configure it, then call `.build` to create it.
+To create a self atkeyD, first use the `AtKey.self` builder to configure it, then call `.build` to create it.
 
 {% code title="AtKey.self signature" %}
 ```dart
@@ -93,12 +87,12 @@ AtKey mySelfID = AtKey.self('phone', namespace: 'wavi', sharedBy: '@alice').buil
 ```
 {% endcode %}
 
-#### Private atID
+#### Private atKey
 
-To create a private atID, first use the `AtKey.private` builder to configure it, then call `.build` to create it.
+To create a private atKey, first use the `AtKey.private` builder to configure it, then call `.build` to create it.
 
 {% hint style="info" %}
-The difference between a private and a self atID is that the private atID is hidden by default when using the [atProtocol scan verb](https://github.com/atsign-foundation/at\_protocol/blob/trunk/specification/at\_protocol\_specification.md#the-scan-verb).
+The difference between a private and a self atkey is that the private atKey is hidden by default when using the [atProtocol scan verb](https://github.com/atsign-foundation/at\_protocol/blob/trunk/specification/at\_protocol\_specification.md#the-scan-verb).
 {% endhint %}
 
 {% code title="AtKey.private signature" %}
@@ -119,9 +113,9 @@ AtKey myPrivateID = AtKey.private('phone', namespace: 'wavi').build();
 ```
 {% endcode %}
 
-#### Shared atID
+#### Shared atKey
 
-To create a shared atID, first use the `AtKey.shared` builder to configure it, then call `.build` to create it.
+To create a shared atKey, first use the `AtKey.shared` builder to configure it, then call `.build` to create it.
 
 {% code title="AtKey.shared signature" %}
 ```dart
@@ -143,9 +137,9 @@ AtKey sharedKey = (AtKey.shared('phone', 'wavi')
 ```
 {% endcode %}
 
-**Caching shared atIDs**
+**Caching shared atKeys**
 
-To cache a shared atID, you can do a [cascade](https://dart.dev/language/operators#cascade-notation) call on `SharedKeyBuilder.cache`.
+To cache a shared atKey, you can do a [cascade](https://dart.dev/language/operators#cascade-notation) call on `SharedKeyBuilder.cache`.
 
 {% code title="Caching example" %}
 ```dart

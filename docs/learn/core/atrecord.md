@@ -5,22 +5,24 @@ description: The format atServers use to store and share data.
 # atRecord
 
 {% hint style="info" %}
-At Atsign, whenever we mention the word "key" assume we are talking about a cryptographic key unless otherwise stated.
+At Atsign, whenever we mention the word "key" we are normally talking about a cryptographic key.
 
-For the time being this is not strictly true, as we are currently migrating the identifier portion of an atRecord from the name "atKey" to the name "atID".
+The main exception being the atKey, this is the "key" of a "key value pair" that makes up every atRecord.&#x20;
+
+It's unfortunate that the word "key" is polymorphic in computer science, and we have tried in the past to move to other words, but we have decided to stick with keys and the developer will have to understand the context of cryptographic key or key value pair (sorry!)
 {% endhint %}
 
-atRecords are the data records that are stored by the atServers. We use the common key-value pair format. By this, we mean non-cryptographic key, so we instead call them "identifier-value pairs" to prevent confusion.
+atRecords are the data records that are stored by the atServers. We use the common key-value pair format.&#x20;
 
-## atID
+## atKey
 
-An atID is the identifier half of the "identifier-value" pair. Similar to the primary key of a tabular database, the atID must be a unique string which represents the data.
+An atKey is the identifier half of the "key-value" pair. Similar to the primary key of a tabular database, the atKey must be a unique string which represents the data.
 
-There are 5 different types of an atID.
+There are 5 different types of an atKey.
 
 <table><thead><tr><th width="119.33333333333331">Type</th><th>Purpose</th></tr></thead><tbody><tr><td>Public</td><td>Store and share public data which can be seen by anyone.</td></tr><tr><td>Self</td><td>Store data which can only be seen by the owner.</td></tr><tr><td>Shared</td><td>Store and share private data which can only be seen by the owner and intended recipient.</td></tr><tr><td>Private</td><td>Store data which can only be seen by the owner, hidden by default.</td></tr><tr><td>Cached</td><td>Cache shared data from other atSigns for performance and offline mode.</td></tr></tbody></table>
 
-### Structure of an atID
+### Structure of an atKey
 
 ```
 [cached:]<visibility scope>:<record ID><owner’s atSign>
@@ -44,26 +46,26 @@ The owner (i.e. creator's) atSign for that particular atRecord. The shared by at
 
 <details>
 
-<summary>Rules for atIDs</summary>
+<summary>Rules for atKeys</summary>
 
-1. Length of an atID should not be more than 240 characters\
+1. Length of an atKey should not be more than 240 characters\
    (a limitation of the current implementation of the atServer, not a protocol limitation)
-2. A maximum of 55 7-bit characters for the atSign
+2. A maximum of 55 7-bit characters for the atSign (unicode is translated to UTF-7)
 3. Allowed characters in an entity are: `[\w._,-"']`
 4. Namespace is mandatory in the current implementation of the protocol\
    i.e entity must follow the notation: `<identifier>.<namespace>`
-5. Cached atIDs should have a different owner than the current atSign
-6. Visibility scope and owner cannot be the same for a shared atID
-7. Reserved atIDs cannot be [modified](../sdk/crud-operations.md) or [notified](../sdk/events.md)
-8. For newly created atIDs, the owner must match the current atSign
+5. Cached atKeys should have a different owner than the current atSign
+6. Visibility scope and owner cannot be the same for a shared atKey
+7. Reserved atKeys cannot be [modified](../sdk/crud-operations.md) or [notified](../sdk/events.md)
+8. For newly created atKeys, the owner must match the current atSign
 
 </details>
 
 <details>
 
-<summary>Reserved atIDs</summary>
+<summary>Reserved atKeys</summary>
 
-The following is a list of reserved atIDs which the atServer requires to function.
+The following is a list of reserved atIKeys which the atServer requires to function.
 
 **Don't** try to delete or overwrite these keys, the atServer cannot function without them.
 
@@ -82,43 +84,43 @@ The following is a list of reserved atIDs which the atServer requires to functio
 
 <details>
 
-<summary>Example atIDs</summary>
+<summary>Example atKeys</summary>
 
-**Public atID**
+**Public atKey**
 
-1. A `public` atID with a record id of `location` shared by `@alice`. This atID typically holds public data that any atSign can access.
+1. A `public` atKey with a record id of `location` shared by `@alice`. This atKey typically holds public data that any atSign can access.
 
 `public:location@alice`
 
-2. A `public` atID with a record id of `publickey` shared by `@bob`. Note that this is a [reserved atID](atrecord.md#reserved-atids).
+2. A `public` atKey with a record id of `publickey` shared by `@bob`. Note that this is a [reserved atKey](atrecord.md#reserved-atids).
 
 `public:publickey@bob`
 
-**Private atID**
+**Private atKey**
 
-1. A `private` atID with a record id of `pk1` shared by `@alice`.
+1. A `private` atKey with a record id of `pk1` shared by `@alice`.
 
 `privatekey:pk1@alice`
 
-**Shared atID**
+**Shared atKey**
 
-1. A `shared` atID with a record id of `phone` shared with `@bob`, shared by `@alice`.
+1. A `shared` atKey with a record id of `phone` shared with `@bob`, shared by `@alice`.
 
 `@bob:phone@alice`
 
-2. A `shared` atID with the record id of `name`, a namespace of `wavi`, shared with `@alice`, and shared by `@bob`.
+2. A `shared` atKey with the record id of `name`, a namespace of `wavi`, shared with `@alice`, and shared by `@bob`.
 
 `@alice:name.wavi@bob`
 
-**Internal atID**
+**Internal atKey**
 
-1. An `internal` atID with a record id of `_latestnotificationid`, namespace of `at_skeleton_app` and is shared by `@alice`.
+1. An `internal` atKey with a record id of `_latestnotificationid`, namespace of `at_skeleton_app` and is shared by `@alice`.
 
 `_latestnotificationid.at_skeleton_app@alice`
 
-**Cached atID**
+**Cached atKey**
 
-1. A `cached` atID with a record id of `phone`, shared with `@bob`, and is shared with `@alice`.
+1. A `cached` atKey with a record id of `phone`, shared with `@bob`, and is shared with `@alice`.
 
 `cached:@bob:phone@alice`
 

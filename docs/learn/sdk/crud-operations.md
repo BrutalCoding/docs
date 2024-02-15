@@ -4,12 +4,6 @@ description: Basic create, read, update and delete operations with atRecords
 
 # CRUD Operations
 
-{% hint style="warning" %}
-atID was previous called "AtKey".
-
-Please note that any reference to the word "AtKey" in this document is not associated with cryptographic keys.
-{% endhint %}
-
 {% tabs %}
 {% tab title="Flutter / Dart" %}
 In Dart, the AtClient is stored within the AtClientManager. Once an atSign has been [onboarded](onboarding.md), you will be able to access the AtClientManager for its associated atSign.
