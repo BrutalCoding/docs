@@ -30,16 +30,16 @@ As previously mentioned, the AtClientManager stores the actual AtClient itself. 
 AtClient atClient = atClientManager.atClient;
 ```
 
-#### atID
+#### atKey
 
-Before you can do anything with an atRecord, you need an [atID](../core/atrecord.md#atidentifier) to represent it.
+Before you can do anything with an atRecord, you need an [atKey](../core/atrecord.md#atidentifier) to represent it.
 
-If you don't know how to create an atID, please see the [reference](atid-reference.md) first.
+If you don't know how to create an atKey, please see the [reference](atid-reference.md) first.
 
 {% hint style="info" %}
-The following examples use the self atID `phone.wavi@<current atSign>`
+The following examples use the self atKey `phone.wavi@<current atSign>`
 
-It is up to the developer to modify the atID according to their use case.
+It is up to the developer to modify the atKey according to their use case.
 {% endhint %}
 
 #### Creating / Updating Data
@@ -69,7 +69,7 @@ Since `put` accepts both `String` or `List<int>` as a value, the typing is dynam
 
 **To update existing data**
 
-Updating existing data is done by doing a put to the same atID, this will overwrite any existing data stored in the atRecord.
+Updating existing data is done by doing a put to the same atKey, this will overwrite any existing data stored in the atRecord.
 
 ```dart
 List<int> binaryData = [1, 2, 3, 4];
@@ -82,12 +82,12 @@ The bytes `[1, 2, 3, 4]` have now replaced the string `"123-456-7890"`.
 
 There are two parts to reading data using the atClient SDK:
 
-1. Scanning for and listing out the atIDs for atRecords that can be retrieved
-2. Retrieving the atRecord for a given atID
+1. Scanning for and listing out the atKeys for atRecords that can be retrieved
+2. Retrieving the atRecord for a given atKey
 
-**1. Scanning and listing atIDs**
+**1. Scanning and listing** atKey**s**
 
-There are two methods available for scanning and listing atIDs:
+There are two methods available for scanning and listing atKeys:
 
 1. `getAtKeys` which provides the list in Class format (i.e. `List<AtKey>`)
 2. `getKeys` which provides the list in String format (i.e. `List<String>`)
@@ -106,37 +106,37 @@ Future<List<AtKey>> getAtKeys(
 
 _regex_
 
-A regular expression used to filter the list of atIDs.
+A regular expression used to filter the list of atKeys.
 
 _sharedBy_
 
-Filter the list of atIDs to only include ones shared by a particular atSign.
+Filter the list of atKeys to only include ones shared by a particular atSign.
 
 _sharedWith_
 
-Filter the list of atIDs to only include ones shared with a particular atSign.
+Filter the list of atKeys to only include ones shared with a particular atSign.
 
 _showHiddenKeys_
 
-A boolean flag to enable the inclusion of hidden atIDs (default = `false`)
+A boolean flag to enable the inclusion of hidden atKeys (default = `false`)
 
 **Usage**
 
-Get all available (non-hidden) atIDs:
+Get all available (non-hidden) atKeys:
 
 ```dart
 List<AtKey> allIDs = await atClient.getAtKeys();
 ```
 
-All atIDs which end with ".wavi" in the record identifier part:
+All atKeys which end with ".wavi" in the record identifier part:
 
 ```dart
 List<AtKey> waviIDs = await atClient.getAtKeys(regex: '^.*\.wavi@.+$');
 ```
 
-**2. Retrieving atRecords by atID**
+**2. Retrieving atRecords by** atKey
 
-To retrieve an atRecord, you must know the atID and pass it to the `get` method.
+To retrieve an atRecord, you must know the atKey and pass it to the `get` method.
 
 {% code title="get signature" %}
 ```dart
@@ -147,7 +147,7 @@ Future<AtValue> get(
 ```
 {% endcode %}
 
-Calling this function will return an AtValue, and update the atID passed to it with any changes to the metadata.
+Calling this function will return an AtValue, and update the atKey passed to it with any changes to the metadata.
 
 **Usage**
 
@@ -157,7 +157,7 @@ String? text = atValue.<a data-footnote-ref href="#user-content-fn-2">value</a>;
 
 #### Deleting Data
 
-To delete data, simply call the `delete` method with the atID for the atRecord to delete.
+To delete data, simply call the `delete` method with the atKey for the atRecord to delete.
 
 {% code title="delete signature" %}
 ```dart

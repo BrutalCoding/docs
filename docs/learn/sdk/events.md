@@ -30,16 +30,16 @@ As previously mentioned, the AtClientManager stores the actual AtClient itself. 
 AtClient atClient = atClientManager.atClient;
 ```
 
-#### atID
+#### atKey
 
-Before you can do anything with an atRecord, you need an [atID](../core/atrecord.md#atidentifier) to represent it.
+Before you can do anything with an atRecord, you need an atKey to represent it.
 
-If you don't know how to create an atID, please see the [reference](atid-reference.md) first.
+If you don't know how to create an atKey, please see the [reference](atid-reference.md) first.
 
 {% hint style="info" %}
-The following examples use the self atID `phone.wavi@<current atSign>`
+The following examples use the self atKey`phone.wavi@<current atSign>`
 
-It is up to the developer to modify the atID according to their use case.
+It is up to the developer to modify the atKey according to their use case.
 {% endhint %}
 {% endtab %}
 
