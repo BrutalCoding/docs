@@ -18,4 +18,4 @@ Dart is available at [dart.dev](https://dart.dev/get-dart) for Windows, Linux, m
 
 
 
-<figure><img src="../.gitbook/assets/VSCODE.png" alt=""><figcaption><p>to get to the Extensions screen press "Control Shift X" then add Dart </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/VSCODE.png" alt=""><figcaption><p>to get to the Extensions screen press "Control Shift X" then add Dart </p></figcaption></figure>

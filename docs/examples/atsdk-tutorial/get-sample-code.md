@@ -14,7 +14,7 @@ https://github.com/atsign-foundation/at_demos.git
 
 This will copy down all the sample code from GitHub to the directory you select. VS Code will ask you if you want to open the directory you just downloaded and say no. We will pick the one directory we need in the next step.
 
-<figure><img src="../.gitbook/assets/VScode Git.png" alt=""><figcaption><p>Clone code from GitHub</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/VScode Git.png" alt=""><figcaption><p>Clone code from GitHub</p></figcaption></figure>
 
 ## Open at\_getting\_started
 
@@ -22,7 +22,7 @@ Click the Open Folder selection and go to the directory you selected and then at
 
 At this point you will have the demo code in the IDE and probably see a bunch of red files, meaning something is wrong with them.&#x20;
 
-<figure><img src="../.gitbook/assets/dart pub get.png" alt=""><figcaption><p>dart pub get</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/dart pub get.png" alt=""><figcaption><p>dart pub get</p></figcaption></figure>
 
 VS Code if you have the Dart plugin installed will ask if you want to run `pub get` you can safely say yes.
 
@@ -38,4 +38,4 @@ dart pub update
 
 Once you have run those commands in the terminal window all the red text will have gone and we are ready to run some code.
 
-<figure><img src="../.gitbook/assets/dart update.png" alt=""><figcaption><p>Ready to run.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/dart update.png" alt=""><figcaption><p>Ready to run.</p></figcaption></figure>
