@@ -14,7 +14,7 @@ At this point we have ported the atSDK to other languages, like Java and Python 
 
 ## Get Dart
 
-Dart is available at [dart.dev](https://dart.dev/get-dart) for Windows, Linux, macOS, download and follow the instructions to install Dart. You can program in the IDE of your choice, but we recommend [VS Code](https://code.visualstudio.com/) as it has excellent support for Dart, download install VS Code then install the Dart extension.
+Dart is available at [dart.dev](https://dart.dev/get-dart) for Windows, Linux, macOS, download and follow the instructions to install Dart. You can program in the IDE of your choice, but we can recommend [VS Code](https://code.visualstudio.com/) as it has excellent support for Dart, download install VS Code then install the Dart extension.
 
 
 
