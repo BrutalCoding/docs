@@ -6,7 +6,7 @@
   * [atRecord](learn/core/atrecord.md)
 * [The atSDK](learn/sdk/README.md)
   * [Onboarding](learn/sdk/onboarding.md)
-  * [atKey Reference](sdk/atid-reference.md)
+  * [atKey Reference](learn/sdk/atid-reference.md)
   * [CRUD Operations](learn/sdk/crud-operations.md)
   * [Events](learn/sdk/events.md)
   * [Synchronization](learn/sdk/synchronization.md)

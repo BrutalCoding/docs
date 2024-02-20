@@ -134,7 +134,12 @@ Metadata of the atRecord is also stored and describes the following properties o
 
 ## atValue
 
-Text or binary values can be saved in an atServer.
+Text or binary values can be saved in an atServer.&#x20;
+
+**Small objects are fine to use the atServer but large objects should be used by reference.**
+
+For example, derive a new encryption key, encypt a file, upload that file to location, then notify other atSigns of the location and the encyption key. This is how [atmospherePro ](https://atsign.com/apps/atmospherepro/)works.\
+
 
 {% hint style="warning" %}
 The size of the value saved in an atServer is bound by the atProtocol's config parameter "maxBufferSize".
