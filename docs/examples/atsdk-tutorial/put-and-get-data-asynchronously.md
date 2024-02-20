@@ -16,7 +16,7 @@ await atClient.put(sharedRecordID, message, putRequestOptions: pro);
 
 of course we also have to setup the atClient object and onboard but that is all in the `at_key_put.dart` file for you. so let's send some data.&#x20;
 
-&#x20;Running the program without arguments brings up this help.
+&#x20;Running the program without arguments brings up this help, most is self explanatory.
 
 ```
 dart run .\bin\at_key_put.dart                                                                
@@ -44,9 +44,11 @@ Invalid argument(s): Option other-atsign is mandatory.
  dart run .\bin\at_key_get.dart -a "@7capricorn" -n "atsign" -o "@energetic22"
 ```
 
+The `-n`namespace is lefthand side of the atRecord so in this case the full atRecord would be `@7capricorn:message.atsign@energetic22` and you see this in the results too. Experiment yourself!
+
 <figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
-You may notice yourself that the first time you fail to get the message. This is because we specified in the metadata that the TTL is 60000 millisecond or 1 minute. Try again as you see in the above image and you should get your message too.
+You may also notice yourself that the first time you fail to get the message. This is because we specified in the metadata that the TTL is 60000 millisecond or 1 minute. Try again as you see in the above image and you should get your message too.
 
 ```dart
     ..metadata = (Metadata()
