@@ -4,7 +4,11 @@ description: An overview of Atsign's core pillars of technology
 
 # Core Technology (atPlatform)
 
-## Overview
+## TL;DR
+
+The atPlatform allows people, entities and things to communicate privately and securely without having to know about the intricacies of the underlying IP network. The atProtocol is the application protocol used to communicate and atSigns are the addresses on the protocol. All cryptographic keys are cut at the edge by the atSign owner, meaning only the receiving and sending atSigns see data in the clear.
+
+The atPlatform can be used to send data synchronously or asynchronously and can be used as a data plane or a control plane or both simultaneously at Internet scale.&#x20;
 
 <figure><img src="../../.gitbook/assets/core-overview-simple.png" alt="Diagram of Atsign&#x27;s Core Technology"><figcaption></figcaption></figure>
 
