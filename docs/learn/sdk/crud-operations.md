@@ -179,18 +179,9 @@ You can find the API reference for the entire package available on [pub](https:/
 
 The `AtClient` class API reference is available [here](https://pub.dev/documentation/at\_client/latest/at\_client/AtClient-class.html).
 {% endtab %}
-
-{% tab title="Java" %}
-Coming soon!
-{% endtab %}
-
-{% tab title="Other Clients" %}
-Coming soon!
-{% endtab %}
 {% endtabs %}
 
-1. This has been deprecated, and will be ignored.
-2. This has been deprecated, and will be ignored.
+
 
 [^1]: This has been deprecated, and will be ignored.
 
