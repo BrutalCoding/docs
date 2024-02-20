@@ -13,7 +13,85 @@ Onboarding is the process of authenticating to the atServer using it's associate
 Depending on the SDK you are using, the process for onboarding varies.
 
 {% tabs %}
-{% tab title="Flutter / Dart" %}
+{% tab title="Dart" %}
+### Dart
+
+In Dart we provide the[ at\_onboarding\_cli](https://pub.dev/packages/at\_onboarding\_cli) package which handles onboarding to the atServer via files stored in the \~/.atsign/keys directory
+
+#### Manual Configuration
+
+**Installation**
+
+First add the package to your project
+
+```dart
+dart pub add at_onboarding_cli
+```
+
+Or add the package to your `pubspec.yaml` manually:
+
+```yaml
+dependencies:
+  at_onboarding_cli: ^1.3.0
+```
+
+#### Usage
+
+Set up the [preferences](https://pub.dev/documentation/at\_onboarding\_cli/latest/at\_onboarding\_cli/AtOnboardingPreference-class.html) to onboard to the atServer.&#x20;
+
+```dart
+ AtOnboardingPreference atOnboardingConfig = AtOnboardingPreference()
+    ..hiveStoragePath = '$homeDirectory/.$nameSpace/$fromAtsign/storage'
+    ..namespace = nameSpace
+    ..downloadPath = '$homeDirectory/.$nameSpace/files'
+    ..isLocalStoreRequired = true
+    ..commitLogPath = '$homeDirectory/.$nameSpace/$fromAtsign/storage/commitLog'
+    ..rootDomain = rootDomain
+    ..fetchOfflineNotifications = true
+    ..atKeysFilePath = atsignFile
+    ..atProtocolEmitted = Version(2, 0, 0);
+```
+
+Next get the onBoardingService&#x20;
+
+```dart
+  AtOnboardingService onboardingService = AtOnboardingServiceImpl(
+      fromAtsign, atOnboardingConfig,
+      atServiceFactory: atServiceFactory);
+```
+
+Finally wait to be onboarded, this returns true once complete.&#x20;
+
+```dart
+await onboardingService.authenticate();
+```
+
+This can be wrapped to check that the onboard was successful with the code snippet below.
+
+```dart
+
+bool onboarded = false;
+  Duration retryDuration = Duration(seconds: 3);
+  while (!onboarded) {
+    try {
+      stdout.write('\r\x1b[KConnecting ... ');
+      await Future.delayed(Duration(
+          milliseconds:
+          1000)); // Pause just long enough for the retry to be visible
+      onboarded = await onboardingService.authenticate();
+    } catch (exception) {
+      stdout.write(
+          '$exception. Will retry in ${retryDuration.inSeconds} seconds');
+    }
+    if (!onboarded) {
+      await Future.delayed(retryDuration);
+    }
+  }
+  stdout.writeln('Connected');
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
 ### Flutter
 
 In Flutter, we provide the [at\_onboarding\_flutter](https://pub.dev/packages/at\_onboarding\_flutter) package which handles secure management of these secret keys.
@@ -79,16 +157,11 @@ You can find the API reference for the entire package available on [pub](https:/
 
 The `AtOnboarding` class API reference is available [here](https://pub.dev/documentation/at\_onboarding\_flutter/latest/at\_onboarding/AtOnboarding-class.html).
 
-### Dart
 
-Coming soon!
-{% endtab %}
-
-{% tab title="Java" %}
-Java atSDK [https://github.com/atsign-foundation/at\_java](https://github.com/atsign-foundation/at\_java)
-{% endtab %}
-
-{% tab title="C" %}
-&#x20; C atSDK [https://github.com/atsign-foundation/at\_c](https://github.com/atsign-foundation/at\_c)
 {% endtab %}
 {% endtabs %}
+
+
+
+
+

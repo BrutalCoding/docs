@@ -4,7 +4,7 @@
 
 An atClient is any client application which uses the atProtocol to interact with an atServer. This can be anything from a desktop application to a small background service running on a microcontroller.
 
-The atClient SDK provides everything you need to write an application which implements the atProtocol. This SDK reference has been broken up into sections to make it easy to learn and find documentation for each step of the development process.
+The atClient SDKs provide everything you need to write an application which implements the atProtocol. This SDK reference is generic and has been broken up into sections to show the basic principles, to get coding take a look at the [tutorials](broken-reference).
 
 ### Sections
 

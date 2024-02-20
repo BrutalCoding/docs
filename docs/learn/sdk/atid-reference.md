@@ -156,12 +156,4 @@ You can find the API reference for the entire package available on [pub](https:/
 
 The `AtKey` class API reference is available [here](https://pub.dev/documentation/at\_commons/latest/at\_commons/AtKey-class.html).
 {% endtab %}
-
-{% tab title="Java" %}
-Coming soon!
-{% endtab %}
-
-{% tab title="Other Clients" %}
-Coming soon!
-{% endtab %}
 {% endtabs %}
