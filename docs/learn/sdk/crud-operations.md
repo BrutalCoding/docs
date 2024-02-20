@@ -34,7 +34,7 @@ AtClient atClient = atClientManager.atClient;
 
 Before you can do anything with an atRecord, you need an [atKey](../core/atrecord.md#atidentifier) to represent it.
 
-If you don't know how to create an atKey, please see the [reference](atid-reference.md) first.
+If you don't know how to create an atKey, please see the [reference](../../sdk/atid-reference.md) first.
 
 {% hint style="info" %}
 The following examples use the self atKey `phone.wavi@<current atSign>`
