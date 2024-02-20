@@ -85,12 +85,10 @@ Coming soon!
 {% endtab %}
 
 {% tab title="Java" %}
-In Java, we expect the keys to be made available in a certain directory on the device.
-
-Rest coming soon!
+Java atSDK [https://github.com/atsign-foundation/at\_java](https://github.com/atsign-foundation/at\_java)
 {% endtab %}
 
-{% tab title="Other Clients" %}
-Coming soon!
+{% tab title="C" %}
+&#x20; C atSDK [https://github.com/atsign-foundation/at\_c](https://github.com/atsign-foundation/at\_c)
 {% endtab %}
 {% endtabs %}
