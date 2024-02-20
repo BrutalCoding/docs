@@ -26,7 +26,7 @@ The **atProtocol** is the _application layer protocol_ used to communicate with 
 
 ## atServer
 
-An atServer is a personal data service for storing encrypted data owned by an atSign, and a rendezvous point for information exchange. An atServer is responsible for the delivery of encrypted information to other atServers, from which the owners of those atSigns can then retrieve the data.
+An atServer is both a personal data service for storing encrypted data owned by an atSign, and a rendezvous point for information exchange. An atServer is responsible for the delivery of encrypted information to other atServers, from which the owners of those atSigns can then retrieve the data.
 
 {% hint style="info" %}
 Unless explicitly made public, atServers only store encrypted data and do not have access to the cryptographic keys, nor the ability to decrypt the stored information.
@@ -36,7 +36,7 @@ Unless explicitly made public, atServers only store encrypted data and do not ha
 
 <summary>atServer Functionality</summary>
 
-* Cryptographic authentication of client devices
+* Cryptographic authentication of client devices.
 * Cryptographic authentication of other atServers.
 * Persistence of encrypted data on behalf of the controlling atSign.
 * Caching of data shared by others with the controlling atSign.
@@ -56,10 +56,10 @@ The location of an atServer is found using the atDirectory service (`root.atsign
 ## atProtocol
 
 {% hint style="info" %}
-The atProtocol communicates via layer 7, the application layer of the OSI model over TCP/IP
+The atProtocol communicates via layer 7, the application layer of the OSI model, over TCP/IP.
 {% endhint %}
 
-The atProtocol is an application protocol which enables data sharing between atSigns. You can learn more about the atProtocol by reading the [specification](https://app.gitbook.com/s/OKcyQuTtJmcTiYSQrNYQ/). The atProtocol uses TCP/IP and TLS but does not specify how data itself is encrypted, that is the job of the atSDK and atClient libraries.
+The atProtocol is an application protocol that enables data sharing between atSigns. You can learn more about the atProtocol by reading the [specification](https://app.gitbook.com/s/OKcyQuTtJmcTiYSQrNYQ/). The atProtocol uses TCP/IP and TLS but does not specify how data itself is encrypted, that is the job of the atSDK and atClient libraries.
 
 ## atSDK
 
