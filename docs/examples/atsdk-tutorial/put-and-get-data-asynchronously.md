@@ -14,9 +14,29 @@ This is achieved by every data element having an owner (the sending atSign) and 
 await atClient.put(sharedRecordID, message, putRequestOptions: pro);
 ```
 
-of course we also have to setup the atClient object and onboard but that is all in the `at_key_put.dart` file for you. so lets send some data.&#x20;
+of course we also have to setup the atClient object and onboard but that is all in the `at_key_put.dart` file for you. so let's send some data.&#x20;
 
-\*Note here we are using the atSigns activated in the previous section just substitute your own atSigns
+&#x20;Running the program without arguments brings up this help.
+
+```
+dart run .\bin\at_key_put.dart                                                                
+    --help                        Usage instructions
+-a, --atsign (mandatory)          This client's atSign
+-n, --namespace (mandatory)       Namespace
+-k, --key-file                    Your atSign's atKeys file if not in ~/.atsign/keys/
+-c, --cram-secret                 atSign's cram secret
+-h, --home-dir                    home directory
+-s, --storage-dir                 directory for this client's local storage files
+-d, --root-domain                 Root Domain
+                                  (defaults to "root.atsign.org")
+-v, --verbose                     More logging
+    --never-sync                  Do not run sync
+-o, --other-atsign (mandatory)    The atSign we want to communicate with
+-m, --message (mandatory)         The message we want to send
+Invalid argument(s): Option other-atsign is mandatory.
+```
+
+\*Note here we are using the atSigns activated in the previous section just substitute your own atSigns.
 
 ```
  dart run .\bin\at_key_put.dart -a "@energetic22" -n "atsign" -o "@7capricorn" -m "hello world" 
@@ -26,7 +46,7 @@ of course we also have to setup the atClient object and onboard but that is all 
 
 <figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
-You may notice yourself that the first time you fail to get the message. This is because we specifiied in the metadata that the TTL is 60000 millisecond or 1 minute. Try again as you see in the above image and you should get your message too.
+You may notice yourself that the first time you fail to get the message. This is because we specified in the metadata that the TTL is 60000 millisecond or 1 minute. Try again as you see in the above image and you should get your message too.
 
 ```dart
     ..metadata = (Metadata()
@@ -34,6 +54,6 @@ You may notice yourself that the first time you fail to get the message. This is
       ..ttr = -1); // allow recipient to keep a cached copy
 ```
 
-The code is worth taking a look at the code as it less than 70 lines, but allows data to transferred from a device anywhere to a device anywhere, and the data is fully encrypted.&#x20;
+The code is worth taking a look at the code as it less than 70 lines but allows data to transferred from a device anywhere to a device anywhere, and the data is fully encrypted.&#x20;
 
 The data in this example is "store and forward", which is ideal for many use cases but sometimes we need near real time data and that's what we cover next.
