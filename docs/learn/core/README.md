@@ -2,7 +2,7 @@
 description: An overview of Atsign's core pillars of technology
 ---
 
-# Core Technology
+# Core Technology (atPlatform)
 
 ## Overview
 
@@ -22,7 +22,7 @@ The **atProtocol** is the _application layer protocol_ used to communicate with 
 
 ## atServer
 
-An atServer is a private datastore for storing encrypted data owned by an atSign, and a rendezvous point for information exchange. An atServer is responsible for the delivery of encrypted information to other atServers, from which the owners of those atSigns can then retrieve the data.
+An atServer is a personal data service for storing encrypted data owned by an atSign, and a rendezvous point for information exchange. An atServer is responsible for the delivery of encrypted information to other atServers, from which the owners of those atSigns can then retrieve the data.
 
 {% hint style="info" %}
 Unless explicitly made public, atServers only store encrypted data and do not have access to the cryptographic keys, nor the ability to decrypt the stored information.
@@ -52,7 +52,11 @@ The location of an atServer is found using the atDirectory service (`root.atsign
 ## atProtocol
 
 {% hint style="info" %}
-The atProtocol communicates via layer 7, the application layer of the OSI model.
+The atProtocol communicates via layer 7, the application layer of the OSI model over TCP/IP
 {% endhint %}
 
-The atProtocol is an application protocol which enables peer-to-peer, end-to-end encrypted data sharing between atSigns. You can learn more about the atProtocol by reading the [specification](https://app.gitbook.com/s/OKcyQuTtJmcTiYSQrNYQ/).
+The atProtocol is an application protocol which enables data sharing between atSigns. You can learn more about the atProtocol by reading the [specification](https://app.gitbook.com/s/OKcyQuTtJmcTiYSQrNYQ/). The atProtocol uses TCP/IP and TLS but does not specify how data itself is encrypted, that is the job of the atSDK and atClient libraries.
+
+## atSDK
+
+atSDKs provide developers with atPlatform specific building tools in a number of languages and for a number of operating systems and hardware. The atSDK allows developers to rapidly develop applications that use the atPlatform.

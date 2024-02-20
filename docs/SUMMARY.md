@@ -1,7 +1,7 @@
 # Table of contents
 
 * [🏠 Atsign Docs](README.md)
-* [Core Technology](learn/core/README.md)
+* [Core Technology (atPlatform)](learn/core/README.md)
   * [atSign](learn/core/atsign.md)
   * [atRecord](learn/core/atrecord.md)
 * [The atSDK](learn/sdk/README.md)
