@@ -39,3 +39,40 @@ Couple of things to notice here are that the RPC server will only respond to RPC
 
 The RPC can of course do anything you want it to and the atSigns can be running anywhere.
 
+### The code
+
+An AtRpc object is set up pretty simply with:
+
+```dart
+    var rpc = AtRpc(
+      atClient: atClient,
+      baseNameSpace: atClient.getPreferences()!.namespace!,
+      domainNameSpace: 'at_rpc_arithmetic_demo',
+      callbacks: DemoRpcServer(),
+      allowList: allowList,
+    );
+
+    rpc.start();
+  } catch (e) {
+    print(e);
+    print(CLIBase.argsParser.usage);
+  }
+```
+
+The Callbacks are sent to the `DemoRpcServer`class and handled appropriately.
+
+On the sending side the RPC client is initiated:
+
+```dart
+    var rpc = AtRpcClient(
+        atClient: atClient,
+        baseNameSpace: atClient.getPreferences()!.namespace!,
+        domainNameSpace: 'at_rpc_arithmetic_demo',
+        serverAtsign: serverAtsign);
+```
+
+Then the RPC simple sent and awaiting a reply
+
+```dart
+var response = await rpc.call({'expr': expr}).timeout(Duration(seconds: 5));
+```
