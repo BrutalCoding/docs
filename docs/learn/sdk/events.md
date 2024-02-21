@@ -42,8 +42,4 @@ The following examples use the self atKey`phone.wavi@<current atSign>`
 It is up to the developer to modify the atKey according to their use case.
 {% endhint %}
 {% endtab %}
-
-{% tab title="Other Clients" %}
-Coming soon!
-{% endtab %}
 {% endtabs %}

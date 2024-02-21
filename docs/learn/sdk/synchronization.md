@@ -36,10 +36,6 @@ SyncService syncService = atClientManager.syncService;
 To simply issue a sync, call the `.sync` function:
 {% endtab %}
 
-{% tab title="Java" %}
-Currently not supported, see the "Other Clients" tab for more info.
-{% endtab %}
-
 {% tab title="Other Clients" %}
 At this time, other clients do not support local persistence of the atServer, and thus do not require synchronization.
 
