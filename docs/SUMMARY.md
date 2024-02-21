@@ -4,6 +4,7 @@
 * [atPlatform](learn/core/README.md)
   * [atSign](learn/core/atsign.md)
   * [atRecord](learn/core/atrecord.md)
+* [atProtocol Specification](atprotocol-specification.md)
 * [The atSDK](learn/sdk/README.md)
   * [Onboarding](learn/sdk/onboarding.md)
   * [atKey Reference](learn/sdk/atid-reference.md)
