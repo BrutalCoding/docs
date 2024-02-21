@@ -2,7 +2,7 @@
 description: An overview of Atsign's core pillars of technology
 ---
 
-# Core Technology (atPlatform)
+# atPlatform
 
 ## TL;DR
 
@@ -10,7 +10,7 @@ The atPlatform allows people, entities and things to communicate privately and s
 
 The atPlatform can be used to send data synchronously or asynchronously and can be used as a data plane or a control plane or both simultaneously at Internet scale.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-02-20 152822.png" alt="Diagram of Atsign&#x27;s Core Technology"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-02-20 152822 (1).png" alt="Diagram of Atsign&#x27;s Core Technology"><figcaption></figcaption></figure>
 
 <details>
 
