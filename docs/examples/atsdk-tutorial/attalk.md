@@ -1,2 +1,2 @@
-# atTalk
+# atTalk - Encrypted chat client
 
