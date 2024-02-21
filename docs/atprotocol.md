@@ -2,18 +2,19 @@
 description: The wire protocol over TCP/IP and TLS
 ---
 
-# atProtocol Specification
+# atProtocol
 
-\\
+## Specification
 
-| **Subject**   | atProtocol specification                           |
-| ------------- | -------------------------------------------------- |
-| **Author(s)** | Colin Constable, Kevin Nickels, Jagannadh Vanghuri |
-|               | Gary Casey, Chris Swan                             |
-| **Revision**  | v0.2.1 (draft)                                     |
-| **Date**      | Dec, 5, 2023                                       |
+The atSDK abstracts away the need to understand or even know about the underlying atProtocol, so for most this section can be ignored. But if you want to know what is happening on the wire or you want to decode the protocol exchanges with something like WireShark this is the place for you.&#x20;
 
-\\
+Note everything is TLS encrypted but you can ask the atSDK to dump the TLS keys and then Wireshark can decode the packets to this level. Even then the data itself is encrypted with keys that only the owner of the atSign's communicating have.
+
+
+
+## The White paper&#x20;
+
+For background on the atProtocol this [whitepaper ](https://atsign.com/wp-content/uploads/2024/02/atProtocol-White-Paper.pdf)was the original design spec and has been updated overtime.
 
 ## atDirectory
 

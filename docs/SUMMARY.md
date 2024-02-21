@@ -4,13 +4,13 @@
 * [atPlatform](learn/core/README.md)
   * [atSign](learn/core/atsign.md)
   * [atRecord](learn/core/atrecord.md)
-* [atProtocol Specification](atprotocol-specification.md)
-* [The atSDK](learn/sdk/README.md)
+* [atSDK](learn/sdk/README.md)
   * [Onboarding](learn/sdk/onboarding.md)
   * [atKey Reference](learn/sdk/atid-reference.md)
   * [CRUD Operations](learn/sdk/crud-operations.md)
   * [Events](learn/sdk/events.md)
   * [Synchronization](learn/sdk/synchronization.md)
+* [atProtocol](atprotocol.md)
 
 ## 🗒 Tutorials <a href="#examples" id="examples"></a>
 
