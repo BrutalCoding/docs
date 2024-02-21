@@ -19,9 +19,8 @@
   * [Cutting your atSigns keys](examples/atsdk-tutorial/cutting-your-keys.md)
   * [Put and Get data asynchronously](examples/atsdk-tutorial/put-and-get-data-asynchronously.md)
   * [Send and Receive data synchronously.](examples/atsdk-tutorial/send-and-receive-data-synchronously.md)
-  * [RPC](examples/atsdk-tutorial/rpc.md)
-  * [at\_notifications](examples/atsdk-tutorial/at\_notifications.md)
-  * [atTalk](examples/atsdk-tutorial/attalk.md)
+  * [Remote Procedure Calls (RPC)](examples/atsdk-tutorial/rpc.md)
+  * [atTalk - Encrypted chat client](examples/atsdk-tutorial/attalk.md)
 
 ***
 
