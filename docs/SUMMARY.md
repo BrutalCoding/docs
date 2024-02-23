@@ -1,27 +1,28 @@
 # Table of contents
 
 * [🏠 Atsign Docs](README.md)
-* [atPlatform](core/README.md)
-  * [atSign](core/atsign.md)
-  * [atRecord](core/atrecord.md)
-* [atSDK](sdk/README.md)
-  * [Onboarding](sdk/onboarding.md)
-  * [atKey Reference](sdk/atid-reference.md)
-  * [CRUD Operations](sdk/crud-operations.md)
-  * [Events](sdk/events.md)
-  * [Synchronization](sdk/synchronization.md)
+* [atPlatform](learn/core/README.md)
+  * [atSign](learn/core/atsign.md)
+  * [atRecord](learn/core/atrecord.md)
+* [atSDK](learn/sdk/README.md)
+  * [Onboarding](learn/sdk/onboarding.md)
+  * [atKey Reference](learn/sdk/atid-reference.md)
+  * [CRUD Operations](learn/sdk/crud-operations.md)
+  * [Events](learn/sdk/events.md)
+  * [Synchronization](learn/sdk/synchronization.md)
 * [atProtocol](atprotocol.md)
 
-## 🗒 Tutorials <a href="#examples" id="examples"></a>
+## 🗒️ Tutorials
 
-* [atSDK tutorial](examples/atsdk-tutorial/README.md)
-  * [Using the atSDK with Dart](examples/atsdk-tutorial/using-the-atsdk-with-dart.md)
-  * [Get sample code](examples/atsdk-tutorial/get-sample-code.md)
-  * [Cutting your atSigns keys](examples/atsdk-tutorial/cutting-your-atsigns-keys.md)
-  * [Put and Get data asynchronously](examples/atsdk-tutorial/put-and-get-data-asynchronously.md)
-  * [Send and Receive data synchronously.](examples/atsdk-tutorial/send-and-receive-data-synchronously.md)
-  * [Remote Procedure Calls (RPC)](examples/atsdk-tutorial/rpc.md)
-  * [atTalk - Encrypted chat client](examples/atsdk-tutorial/attalk.md)
+* [atSDK tutorial](tutorials/atsdk-tutorial/README.md)
+  * [Using the atSDK with Dart](tutorials/atsdk-tutorial/using-the-atsdk-with-dart.md)
+  * [Get sample code](tutorials/atsdk-tutorial/get-sample-code.md)
+  * [Cutting your atSigns keys](tutorials/atsdk-tutorial/cutting-your-atsigns-keys.md)
+  * [Put and Get data asynchronously](tutorials/atsdk-tutorial/put-and-get-data-asynchronously.md)
+  * [Send and Receive data synchronously.](tutorials/atsdk-tutorial/send-and-receive-data-synchronously.md)
+  * [Remote Procedure Calls (RPC)](tutorials/atsdk-tutorial/rpc.md)
+  * [atTalk - Encrypted chat client](tutorials/atsdk-tutorial/attalk.md)
+* [Flutter & atSDK app](tutorials/flutter-and-atsdk-app.md)
 
 ***
 
