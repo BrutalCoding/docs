@@ -221,7 +221,7 @@ Now you are ready to begin developing!
 
 #### Onboarding
 
-To authenticate an atSign, we will use `at_onboarding_flutter`. You can register an atSign [through the registrar](https://my.atsign.com/go) or through the widget in the app.
+To authenticate an atSign, we will use `at_onboarding_flutter`. You can register an atSign [through the registrar](https://my.atsign.com/go) or through the widget in the app.&#x20;
 
 ```dart
 AtOnboardingResult onboardingResult = await AtOnboarding.onboard(
@@ -235,6 +235,12 @@ AtOnboardingResult onboardingResult = await AtOnboarding.onboard(
 );
 ```
 
-#### Other atPlatform Packages
+To get an API key for your app you can get on by going to the Manage section of your atSign on the [registrar website](https://my.atsign.com/dashboard) and then click Advanced Settings.
+
+<figure><img src="../.gitbook/assets/colin.png" alt=""><figcaption><p>Manage your atSign</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/API.png" alt=""><figcaption><p>Get an API Key</p></figcaption></figure>
+
+## Other atPlatform Packages
 
 View other packages from Atsign [here](https://pub.dev/publishers/atsign.org/packages)
