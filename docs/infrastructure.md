@@ -1,5 +1,5 @@
 ---
-description: How do we scale and provide resilience.
+description: How we scale and provide resilience.
 ---
 
 # Infrastructure
