@@ -1,5 +1,5 @@
 ---
-description: Let's talk
+description: Send me a txt!
 ---
 
 # Send and Receive data synchronously.
