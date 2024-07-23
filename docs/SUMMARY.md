@@ -15,7 +15,7 @@
 
 ## 🗒️ Tutorials
 
-* [atSDK tutorial](tutorials/atsdk-tutorial/README.md)
+* [Dart atSDK Walkthrough](tutorials/atsdk-tutorial/README.md)
   * [Using the atSDK with Dart](tutorials/atsdk-tutorial/using-the-atsdk-with-dart.md)
   * [Get sample code](tutorials/atsdk-tutorial/get-sample-code.md)
   * [Cutting your atSigns keys](tutorials/atsdk-tutorial/cutting-your-atsigns-keys.md)
@@ -23,7 +23,7 @@
   * [Send and Receive data synchronously.](tutorials/atsdk-tutorial/send-and-receive-data-synchronously.md)
   * [Remote Procedure Calls (RPC)](tutorials/atsdk-tutorial/rpc.md)
   * [atTalk - Encrypted chat client](tutorials/atsdk-tutorial/attalk.md)
-* [Flutter & atSDK app](tutorials/flutter-and-atsdk-app.md)
+* [Starter Flutter App](tutorials/flutter-and-atsdk-app.md)
 
 ***
 
