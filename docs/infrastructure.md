@@ -16,7 +16,7 @@ UpTimeRobot Reports
 
 Atsign runs the Internet atDirectory, which has to be resilient and dependable. To provide that level of service, we use Google's Cloud Platform, Kubernetes, containers, and a distributed in-memory database.&#x20;
 
-<figure><picture><source srcset=".gitbook/assets/atDirectory-dark (1).png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/atDirectory (1).png" alt="Architecture Diagram of the atDirectory infrastructure"></picture><figcaption><p>Highly available design</p></figcaption></figure>
+<figure><picture><source srcset=".gitbook/assets/Auto-Sized - Dark.png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/Auto-Sized - Light.png" alt="Architecture Diagram of the atDirectory infrastructure"></picture><figcaption><p>Highly available design</p></figcaption></figure>
 
 The atDirectory runs in a GCP Virtual Private Cloud. This VPC also houses an auto-scaling Kubernetes cluster which is spread across multiple datacenters and availability zones.
 
@@ -32,7 +32,7 @@ Each atSign has its own dedicated personal data store, called an "atServer," run
 
 Why Docker Swarm and not Kubernetes? Kubernetes is an excellent choice for groups of containers that provide a service like the atDirectory or websites. But, Kubernetes does not scale down well for thousands or millions of tiny independent containers like atServers.  Docker Swarm also provides highly resilient networking and is very lightweight.
 
-<figure><picture><source srcset=".gitbook/assets/atServer-dark.png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/atServer.png" alt=""></picture><figcaption><p>resilient atServer Cluster</p></figcaption></figure>
+<figure><picture><source srcset=".gitbook/assets/Docker Swarm - Dark.png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/Docker Swarm - Light.png" alt=""></picture><figcaption><p>resilient atServer Cluster</p></figcaption></figure>
 
 The FQDN and port number for a given atSign from the atDirectory is connected to the Docker Swarm. Each Docker Swarm node will route the port number to the right container on the swarm via its internal VXLAN. The Manager Nodes are responsible for ensuring each container is running and available across the whole swarm.
 
