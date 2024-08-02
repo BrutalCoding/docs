@@ -10,7 +10,6 @@
   * [CRUD Operations](learn/sdk/crud-operations.md)
   * [Events](learn/sdk/events.md)
   * [Synchronization](learn/sdk/synchronization.md)
-* [atProtocol](atprotocol.md)
 * [Infrastructure](infrastructure.md)
 
 ## 🗒️ Tutorials
@@ -29,3 +28,4 @@
 
 * [atsign.com](https://atsign.com/)
 * [noports.com](https://noports.com)
+* [atProtocol specification](https://github.com/atsign-foundation/at\_protocol/blob/trunk/specification/at\_protocol\_specification.md)
