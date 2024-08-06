@@ -26,6 +26,7 @@
 
 ## Related pages
 
-* [atsign.com](https://atsign.com/)
-* [noports.com](https://noports.com)
+* [Main site](https://atsign.com/)
 * [atProtocol specification](https://github.com/atsign-foundation/at\_protocol/blob/trunk/specification/at\_protocol\_specification.md)
+* [atSign Registrar](https://my.atsign.com/)
+* [NoPorts](https://noports.com)
