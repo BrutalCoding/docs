@@ -24,21 +24,24 @@
   * [atTalk - Encrypted chat client](tutorials/atsdk-tutorial/attalk.md)
 * [Starter Flutter App](tutorials/flutter-and-atsdk-app.md)
 
-***
+## Related pages
 
 * [atsign.com](https://atsign.com/)
 * [noports.com](https://noports.com)
 * [atProtocol specification](https://github.com/atsign-foundation/at\_protocol/blob/trunk/specification/at\_protocol\_specification.md)
-* [Reference](reference/README.md)
-  * [atsign](reference/atsign.md)
-  * [cram](reference/cram.md)
-  * [encryption](reference/encryption.md)
-  * [namespace](reference/namespace.md)
-  * [notification](reference/notification.md)
-  * [pkam](reference/pkam.md)
-  * [polymorphism](reference/polymorphism.md)
-  * [pricing and costs](reference/pricing-and-costs.md)
-  * [privacy](reference/privacy.md)
-  * [public and private keys](reference/public-and-private-keys.md)
-  * [self encryption key](reference/self-encryption-key.md)
-  * [synchronization](reference/synchronization.md)
+
+***
+
+* [Glossary](glossary/README.md)
+  * [atsign](glossary/atsign.md)
+  * [cram](glossary/cram.md)
+  * [encryption](glossary/encryption.md)
+  * [namespace](glossary/namespace.md)
+  * [notification](glossary/notification.md)
+  * [pkam](glossary/pkam.md)
+  * [polymorphism](glossary/polymorphism.md)
+  * [pricing and costs](glossary/pricing-and-costs.md)
+  * [privacy](glossary/privacy.md)
+  * [public and private keys](glossary/public-and-private-keys.md)
+  * [self encryption key](glossary/self-encryption-key.md)
+  * [synchronization](glossary/synchronization.md)
