@@ -24,8 +24,9 @@
   * [atTalk - Encrypted chat client](tutorials/atsdk-tutorial/attalk.md)
 * [Starter Flutter App](tutorials/flutter-and-atsdk-app.md)
 
-***
+## Related pages
 
-* [atsign.com](https://atsign.com/)
-* [noports.com](https://noports.com)
+* [Main site](https://atsign.com/)
 * [atProtocol specification](https://github.com/atsign-foundation/at\_protocol/blob/trunk/specification/at\_protocol\_specification.md)
+* [atSign Registrar](https://my.atsign.com/)
+* [NoPorts](https://noports.com)
