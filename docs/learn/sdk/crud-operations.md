@@ -1,5 +1,5 @@
 ---
-description: Basic create, read, update and delete operations with atRecords
+description: How to do basic CRUD operations on an atServer
 ---
 
 # CRUD Operations
@@ -173,13 +173,905 @@ Future<bool> delete(
 bool res = await atClient.delete(myID);
 ```
 
+### Additional Features
+
+See [#additional-features](crud-operations.md#additional-features "mention") to learn about synchronization, which supports syncing of a local atServer, allowing CRUD operations to work even if the application has no internet access.
+
 ### API Docs
 
 You can find the API reference for the entire package available on [pub](https://pub.dev/documentation/at\_client/latest/).
 
 The `AtClient` class API reference is available [here](https://pub.dev/documentation/at\_client/latest/at\_client/AtClient-class.html).
 {% endtab %}
+
+{% tab title="C" %}
+## C
+
+### Table of Contents
+
+* [#introduction](crud-operations.md#introduction "mention")
+* [#put-public-atkey](crud-operations.md#put-public-atkey "mention")
+  * [#id-1.-create-public-atkey](crud-operations.md#id-1.-create-public-atkey "mention")
+  * [#id-2.-call-atclient\_put\_public\_key](crud-operations.md#id-2.-call-atclient\_put\_public\_key "mention")
+  * [#example-application](crud-operations.md#example-application "mention")
+* [#put-self-atkey](crud-operations.md#put-self-atkey "mention")
+  * [#id-1.-create-a-self-atkey](crud-operations.md#id-1.-create-a-self-atkey "mention")
+  * [#id-2.-call-atclient\_put\_self\_key](crud-operations.md#id-2.-call-atclient\_put\_self\_key "mention")
+  * [#example-application-1](crud-operations.md#example-application-1 "mention")
+* [#put-shared-atkey](crud-operations.md#put-shared-atkey "mention")
+  * [#id-1.-create-a-shared-atkey](crud-operations.md#id-1.-create-a-shared-atkey "mention")
+  * [#id-2.-call-atclient\_put\_shared\_key](crud-operations.md#id-2.-call-atclient\_put\_shared\_key "mention")
+  * [#example-application-2](crud-operations.md#example-application-2 "mention")
+* [#get-public-atkey](crud-operations.md#get-public-atkey "mention")
+  * [#id-1.-create-public-atkey-1](crud-operations.md#id-1.-create-public-atkey-1 "mention")
+  * [#id-2.-call-atclient\_get\_public\_key](crud-operations.md#id-2.-call-atclient\_get\_public\_key "mention")
+  * [#id-3.-free-value](crud-operations.md#id-3.-free-value "mention")
+  * [#example-application-3](crud-operations.md#example-application-3 "mention")
+* [#get-self-atkey](crud-operations.md#get-self-atkey "mention")
+  * [#id-1.-create-a-self-atkey-1](crud-operations.md#id-1.-create-a-self-atkey-1 "mention")
+  * [#id-2.-call-atclient\_get\_self\_key](crud-operations.md#id-2.-call-atclient\_get\_self\_key "mention")
+  * [#id-3.-free-value-1](crud-operations.md#id-3.-free-value-1 "mention")
+  * [#example-application-4](crud-operations.md#example-application-4 "mention")
+* [#get-shared-atkey](crud-operations.md#get-shared-atkey "mention")
+  * [#id-1.-create-a-shared-atkey-1](crud-operations.md#id-1.-create-a-shared-atkey-1 "mention")
+  * [#id-2.-call-atclient\_get\_shared\_key](crud-operations.md#id-2.-call-atclient\_get\_shared\_key "mention")
+  * [#id-3.-free-value-2](crud-operations.md#id-3.-free-value-2 "mention")
+  * [#example-application-5](crud-operations.md#example-application-5 "mention")
+* [#delete-an-atkey](crud-operations.md#delete-an-atkey "mention")
+  * [#id-1.-create-an-atkey](crud-operations.md#id-1.-create-an-atkey "mention")
+  * [#id-2.-call-atclient\_delete](crud-operations.md#id-2.-call-atclient\_delete "mention")
+  * [#example-application-6](crud-operations.md#example-application-6 "mention")
+* [#request-options](crud-operations.md#request-options "mention")
+
+### Introduction
+
+In this section, we will learn how to `put`, `get`, and `delete` an atKey.
+
+If you are unfamiliar with the different atKey types, check out our documentation on [atRecords](../core/atrecord.md).
+
+### Put Public atKey
+
+#### 1. Create Public AtKey
+
+First, create a public atKey. It is important to note that the `shared_by` atSign should be the same as the authenticated atSign in the application.
+
+```c
+atclient_atkey my_public_atkey;
+atclient_atkey_init(&my_public_atkey);
+
+const char *atkey_key = "phone";
+const char *atkey_shared_by = "@jeremy_0";
+const char *atkey_namespace = "c_demos";
+
+if (atclient_atkey_create_public_key(&my_public_atkey, atkey_key, atkey_shared_by, atkey_namespace) != 0)
+{
+  // an error occurred
+}
+```
+
+#### 2. Call \`atclient\_put\_public\_key\`
+
+Next, simply \*put\* the value into your atServer. Since we are putting a public value into our atServer, no data will be encrypted and this data will be available for any atSign to get.
+
+We will pass `NULL` into the request\_options and commit\_id parameters because we want to use the default options for now and we don't particularly care about the commit\_id that it returns, but you could receive it if you would like.
+
+This function returns an `int` for error handling, in which a non-zero exit code indicates an error.
+
+```c
+const char *atkey_value = "123-456-7890";
+
+if (atclient_put_public_key(&atclient, &my_public_atkey, atkey_value, NULL, NULL) != 0)
+{
+    // an error occurred
+}
+```
+
+#### Example Application
+
+```c
+#include <atclient/atclient.h>
+#include <atclient/atclient_utils.h>
+#include <atclient/constants.h>
+#include <atlogger/atlogger.h>
+#include <stdlib.h>
+
+#define ATSIGN "@soccer99"
+
+int main()
+{
+    int exit_code = -1;
+
+    atlogger_set_logging_level(ATLOGGER_LOGGING_LEVEL_DEBUG);
+
+    char *atserver_host = NULL;
+    int atserver_port = 0;
+
+    atclient_atkeys atkeys;
+    atclient_atkeys_init(&atkeys);
+
+    atclient atclient;
+    atclient_init(&atclient);
+
+    atclient_atkey my_public_atkey;
+    atclient_atkey_init(&my_public_atkey);
+
+    if ((exit_code = atclient_utils_find_atserver_address(ATCLIENT_ATDIRECTORY_PRODUCTION_HOST, ATCLIENT_ATDIRECTORY_PRODUCTION_PORT, ATSIGN, &atserver_host, &atserver_port)) != 0)
+    {
+        goto exit;
+    }
+
+    if ((exit_code = atclient_utils_populate_atkeys_from_homedir(&atkeys, ATSIGN)) != 0)
+    {
+        goto exit;
+    }
+
+    if ((exit_code = atclient_pkam_authenticate(&atclient, atserver_host, atserver_port, &atkeys, ATSIGN)) != 0)
+    {
+        goto exit;
+    }
+
+    const char *atkey_key = "phone";
+    const char *atkey_shared_by = ATSIGN;
+    const char *atkey_namespace = "c_demos";
+
+    if ((exit_code = atclient_atkey_create_public_key(&my_public_atkey, atkey_key, atkey_shared_by, atkey_namespace)) != 0)
+    {
+        goto exit;
+    }
+
+    const char *atkey_value = "123-456-7890";
+
+    /*
+     * atclient_put_self_key lets you put a key-value pair in your atSign's atServer.
+     * For our purposes, we will pass `NULL` for the request options and the commit id. 
+     * We want to use the default options and we don't want to receive and
+     * store the commit id.
+     */
+    if ((exit_code = atclient_put_public_key(&atclient, &my_public_atkey, atkey_value, NULL, NULL)) != 0)
+    {
+        goto exit;
+    }
+
+    exit_code = 0;
+exit:
+{
+    free(atserver_host);
+    atclient_atkeys_free(&atkeys);
+    atclient_free(&atclient);
+    atclient_atkey_free(&my_public_atkey);
+    return exit_code;
+}
+}
+```
+
+### Put Self atKey
+
+#### 1. Create a Self atKey
+
+```c
+atclient_atkey my_self_atkey;
+atclient_atkey_init(&my_self_atkey);
+
+const char *atkey_key = "phone";
+const char *atkey_shared_by = "@jeremy_0";
+const char *atkey_namespace = "c_demos";
+
+if (atclient_atkey_create_self_key(&my_self_atkey, atkey_key, atkey_shared_by, atkey_namespace) != 0)
+{
+    // an error occurred
+}
+```
+
+#### 2. Call \`atclient\_put\_self\_key\`
+
+This will put a value specially encrypted for your atServer that only the atSign's atKeys can decrypt.
+
+We will pass `NULL` into the request\_options and commit\_id parameters because we want to use the default options for now and we don't particularly care about the commit\_id that it returns, but you could receive it if you would like.
+
+This function will return an `int` for error handling, in which a non-zero exit code indicates an error.&#x20;
+
+```c
+const char *atkey_value = "123-456-7890";
+
+if (atclient_put_self_key(&atclient, &my_self_atkey, atkey_value, NULL, NULL) != 0)
+{
+  // an error occurred
+}
+```
+
+#### Example Application
+
+```c
+#include <atclient/atclient.h>
+#include <atclient/atclient_utils.h>
+#include <atclient/constants.h>
+#include <atlogger/atlogger.h>
+#include <stdlib.h>
+
+#define ATSIGN "@soccer99"
+
+int main()
+{
+    int exit_code = -1;
+
+    atlogger_set_logging_level(ATLOGGER_LOGGING_LEVEL_DEBUG);
+
+    char *atserver_host = NULL;
+    int atserver_port = 0;
+
+    atclient_atkeys atkeys;
+    atclient_atkeys_init(&atkeys);
+
+    atclient atclient;
+    atclient_init(&atclient);
+
+    atclient_atkey my_self_atkey;
+    atclient_atkey_init(&my_self_atkey);
+
+    if ((exit_code = atclient_utils_find_atserver_address(ATCLIENT_ATDIRECTORY_PRODUCTION_HOST, ATCLIENT_ATDIRECTORY_PRODUCTION_PORT, ATSIGN, &atserver_host, &atserver_port)) != 0)
+    {
+        goto exit;
+    }
+
+    if ((exit_code = atclient_utils_populate_atkeys_from_homedir(&atkeys, ATSIGN)) != 0)
+    {
+        goto exit;
+    }
+
+    if ((exit_code = atclient_pkam_authenticate(&atclient, atserver_host, atserver_port, &atkeys, ATSIGN)) != 0)
+    {
+        goto exit;
+    }
+
+    const char *atkey_key = "phone";
+    const char *atkey_shared_by = ATSIGN;
+    const char *atkey_namespace = "c_demos";
+
+    if ((exit_code = atclient_atkey_create_self_key(&my_self_atkey, atkey_key, atkey_shared_by, atkey_namespace)) != 0)
+    {
+        goto exit;
+    }
+
+    const char *atkey_value = "123-456-7890";
+
+    /*
+     * atclient_put_self_key lets you put a key-value pair in your atSign's atServer.
+     * For our purposes, we will pass `NULL` for the request options and the commit id. 
+     * We want to use the default options and we don't want to receive and
+     * store the commit id.
+     */
+    if ((exit_code = atclient_put_self_key(&atclient, &my_self_atkey, atkey_value, NULL, NULL)) != 0)
+    {
+        goto exit;
+    }
+
+    exit_code = 0;
+exit:
+{
+    free(atserver_host);
+    atclient_atkeys_free(&atkeys);
+    atclient_free(&atclient);
+    atclient_atkey_free(&my_self_atkey);
+    return exit_code;
+}
+}
+
+```
+
+### Put Shared atKey
+
+#### 1. Create a Shared atKey
+
+```c
+atclient_atkey my_shared_atkey;
+atclient_atkey_init(&my_shared_atkey);
+
+const char *atkey_key = "phone";
+const char *atkey_shared_by = "@jeremy_0";
+const char *atkey_shared_with = "@soccer0";
+const char *atkey_namespace = "c_demos";
+if (atclient_atkey_create_shared_key(&my_shared_atkey, atkey_key, atkey_shared_by, atkey_shared_with, atkey_namespace) != 0)
+{
+    // an error occurred
+}
+```
+
+#### 2. Call \`atclient\_put\_shared\_key\`
+
+This function will put our string value into the atServer. Since we are using a Shared atKey, that means only the `shared_by` and `shared_with` atSign will be able to decrypt this value.&#x20;
+
+We will pass `NULL` into the request\_options and commit\_id parameters because we want to use the default options for now and we don't particularly care about the commit\_id that it returns, but you could receive it if you would like.
+
+This function returns an `int` for error handling, in which a non-zero exit code indicates an error.
+
+```c
+const char *atkey_value = "123-456-7890";
+if (atclient_put_shared_key(&atclient, &my_shared_atkey, atkey_value, NULL, NULL) != 0)
+{
+    // an error occurred
+}
+```
+
+#### Example Application
+
+```c
+#include <atclient/atclient.h>
+#include <atclient/atclient_utils.h>
+#include <atclient/constants.h>
+#include <atlogger/atlogger.h>
+#include <stdlib.h>
+
+#define ATSIGN "@soccer99"
+
+int main()
+{
+    int exit_code = -1;
+
+    atlogger_set_logging_level(ATLOGGER_LOGGING_LEVEL_DEBUG);
+
+    char *atserver_host = NULL;
+    int atserver_port = 0;
+
+    atclient_atkeys atkeys;
+    atclient_atkeys_init(&atkeys);
+
+    atclient atclient;
+    atclient_init(&atclient);
+
+    atclient_atkey my_shared_atkey;
+    atclient_atkey_init(&my_shared_atkey);
+
+    if ((exit_code = atclient_utils_find_atserver_address(ATCLIENT_ATDIRECTORY_PRODUCTION_HOST, ATCLIENT_ATDIRECTORY_PRODUCTION_PORT, ATSIGN, &atserver_host, &atserver_port)) != 0)
+    {
+        goto exit;
+    }
+
+    if ((exit_code = atclient_utils_populate_atkeys_from_homedir(&atkeys, ATSIGN)) != 0)
+    {
+        goto exit;
+    }
+
+    if ((exit_code = atclient_pkam_authenticate(&atclient, atserver_host, atserver_port, &atkeys, ATSIGN)) != 0)
+    {
+        goto exit;
+    }
+
+    const char *atkey_key = "phone";
+    const char *atkey_shared_by = ATSIGN;
+    const char *atkey_shared_with = "@soccer0";
+    const char *atkey_namespace = "c_demos";
+
+    if ((exit_code = atclient_atkey_create_shared_key(&my_shared_atkey, atkey_key, atkey_shared_by, atkey_shared_with, atkey_namespace)) != 0)
+    {
+        goto exit;
+    }
+
+    const char *atkey_value = "123-456-7890";
+
+    /*
+     * atclient_put_self_key lets you put a key-value pair in your atSign's atServer.
+     * For our purposes, we will pass `NULL` for the request options and the commit id. 
+     * We want to use the default options and we don't want to receive and
+     * store the commit id.
+     */
+    if ((exit_code = atclient_put_shared_key(&atclient, &my_shared_atkey, atkey_value, NULL, NULL)) != 0)
+    {
+        goto exit;
+    }
+
+    exit_code = 0;
+exit:
+{
+    free(atserver_host);
+    atclient_atkeys_free(&atkeys);
+    atclient_free(&atclient);
+    atclient_atkey_free(&my_shared_atkey);
+    return exit_code;
+}
+}
+```
+
+### Get Public atKey
+
+#### 1. Create Public AtKey
+
+First, create a public atKey. It is important to note that the `shared_by` atSign should be the same as the authenticated atSign in the application.
+
+```c
+atclient_atkey my_public_atkey;
+atclient_atkey_init(&my_public_atkey);
+
+const char *atkey_key = "phone";
+const char *atkey_shared_by = "@jeremy_0";
+const char *atkey_namespace = "c_demos";
+
+if (atclient_atkey_create_public_key(&my_public_atkey, atkey_key, atkey_shared_by, atkey_namespace) != 0)
+{
+  // an error occurred
+}
+```
+
+#### 2. Call \`atclient\_get\_public\_key\`
+
+We will create a variable named `value` and pass the address to it in our `atclient_get_public_key` function call. The function will allocate memory for us and populate that variable for us.&#x20;
+
+We will pass `NULL` into the request\_options parameter because we want to use the default options for now.
+
+This function returns an `int` for error handling, in which a non-zero exit code indicates an error.
+
+```c
+char *value = NULL;
+if (atclient_get_public_key(&atclient, &my_public_atkey, &value, NULL) != 0)
+{
+    // an error occurred
+}
+```
+
+#### 3. Free \`value\`
+
+Once we are done with the value itself, we should free it to avoid any memory leaks.
+
+```c
+free(value);
+```
+
+#### Example Application
+
+```c
+#include <atclient/atclient.h>
+#include <atclient/atclient_utils.h>
+#include <atclient/constants.h>
+#include <atlogger/atlogger.h>
+#include <stdlib.h>
+
+#define ATSIGN "@soccer99"
+
+int main()
+{
+    int exit_code = -1;
+
+    atlogger_set_logging_level(ATLOGGER_LOGGING_LEVEL_DEBUG);
+
+    char *atserver_host = NULL;
+    int atserver_port = 0;
+
+    atclient_atkeys atkeys;
+    atclient_atkeys_init(&atkeys);
+
+    atclient atclient;
+    atclient_init(&atclient);
+
+    atclient_atkey my_public_atkey;
+    atclient_atkey_init(&my_public_atkey);
+
+    /*
+     * Let's declare a null pointer which will later be allocated by our `atclient_get_public_key` function. It is our responsibility to free it once we are
+     * done with it.
+     */
+    char *value = NULL;
+
+    if ((exit_code = atclient_utils_find_atserver_address(ATCLIENT_ATDIRECTORY_PRODUCTION_HOST, ATCLIENT_ATDIRECTORY_PRODUCTION_PORT, ATSIGN, &atserver_host, &atserver_port)) != 0)
+    {
+        goto exit;
+    }
+
+    if ((exit_code = atclient_utils_populate_atkeys_from_homedir(&atkeys, ATSIGN)) != 0)
+    {
+        goto exit;
+    }
+
+    if ((exit_code = atclient_pkam_authenticate(&atclient, atserver_host, atserver_port, &atkeys, ATSIGN)) != 0)
+    {
+        goto exit;
+    }
+
+    const char *atkey_key = "phone";
+    const char *atkey_shared_by = ATSIGN;
+    const char *atkey_namespace = "c_demos";
+
+    if ((exit_code = atclient_atkey_create_public_key(&my_public_atkey, atkey_key, atkey_shared_by, atkey_namespace)) != 0)
+    {
+        goto exit;
+    }
+
+    /*
+     * `atclient_get_public_key` will allocate memory for the `value` pointer. It is our responsibility to free it once we are done with it.
+     * We will pass `NULL` into the request_options argument for now and just use the default request options.
+     */
+    if ((exit_code = atclient_get_public_key(&atclient, &my_public_atkey, &value, NULL)) != 0)
+    {
+        goto exit;
+    }
+
+    atlogger_log("3d-get-public-atkey", ATLOGGER_LOGGING_LEVEL_INFO, "value: \"%s\"\n", value);
+
+    exit_code = 0;
+exit:
+{
+    free(atserver_host);
+    atclient_atkeys_free(&atkeys);
+    atclient_free(&atclient);
+    atclient_atkey_free(&my_public_atkey);
+    free(value);
+    return exit_code;
+}
+}
+```
+
+### Get Self atKey
+
+#### 1. Create a Self atKey
+
+```c
+atclient_atkey my_self_atkey;
+atclient_atkey_init(&my_self_atkey);
+
+const char *atkey_key = "phone";
+const char *atkey_shared_by = "@jeremy_0";
+const char *atkey_namespace = "c_demos";
+
+if (atclient_atkey_create_self_key(&my_self_atkey, atkey_key, atkey_shared_by, atkey_namespace) != 0)
+{
+    // an error occurred
+}
+```
+
+#### 2. Call \`atclient\_get\_self\_key\`
+
+We will create a variable named `value` and pass the address to it in our `atclient_get_self_key` function call. The function will allocate memory for us and populate that variable for us.&#x20;
+
+We will pass `NULL` into the request\_options parameter because we want to use the default options for now.
+
+This function returns an `int` for error handling, in which a non-zero exit code indicates an error.
+
+```c
+char *value = NULL;
+if (atclient_get_self_key(&atclient, &my_self_atkey, &value, NULL) != 0)
+{
+    // an error occurred
+}
+```
+
+#### 3. Free \`value\`
+
+Once we are done with the value itself, we should free it to avoid any memory leaks.
+
+```c
+free(value);
+```
+
+#### Example Application
+
+```c
+#include <atclient/atclient.h>
+#include <atclient/atclient_utils.h>
+#include <atclient/constants.h>
+#include <atlogger/atlogger.h>
+#include <stdlib.h>
+
+#define ATSIGN "@soccer99"
+
+int main()
+{
+    int exit_code = -1;
+
+    atlogger_set_logging_level(ATLOGGER_LOGGING_LEVEL_DEBUG);
+
+    char *atserver_host = NULL;
+    int atserver_port = 0;
+
+    atclient_atkeys atkeys;
+    atclient_atkeys_init(&atkeys);
+
+    atclient atclient;
+    atclient_init(&atclient);
+
+    atclient_atkey my_self_atkey;
+    atclient_atkey_init(&my_self_atkey);
+
+    /*
+     * Let's declare a null pointer which will later be allocated by our `atclient_get_public_key` function. It is our responsibility to free it once we are
+     * done with it.
+     */
+    char *value = NULL;
+
+    if ((exit_code = atclient_utils_find_atserver_address(ATCLIENT_ATDIRECTORY_PRODUCTION_HOST, ATCLIENT_ATDIRECTORY_PRODUCTION_PORT, ATSIGN, &atserver_host, &atserver_port)) != 0)
+    {
+        goto exit;
+    }
+
+    if ((exit_code = atclient_utils_populate_atkeys_from_homedir(&atkeys, ATSIGN)) != 0)
+    {
+        goto exit;
+    }
+
+    if ((exit_code = atclient_pkam_authenticate(&atclient, atserver_host, atserver_port, &atkeys, ATSIGN)) != 0)
+    {
+        goto exit;
+    }
+
+    const char *atkey_key = "phone";
+    const char *atkey_shared_by = ATSIGN;
+    const char *atkey_namespace = "c_demos";
+
+    if ((exit_code = atclient_atkey_create_self_key(&my_self_atkey, atkey_key, atkey_shared_by, atkey_namespace)) != 0)
+    {
+        goto exit;
+    }
+
+    /*
+     * `atclient_get_self_key` will allocate memory for the `value` pointer. It is our responsibility to free it once we are done with it.
+     * We will pass `NULL` into the request_options argument for now and just use the default request options.
+     */
+    if ((exit_code = atclient_get_self_key(&atclient, &my_self_atkey, &value, NULL)) != 0)
+    {
+        goto exit;
+    }
+
+    atlogger_log("3E-get-self-atkey", ATLOGGER_LOGGING_LEVEL_INFO, "value: \"%s\"\n", value);
+
+    exit_code = 0;
+exit:
+{
+    free(atserver_host);
+    atclient_atkeys_free(&atkeys);
+    atclient_free(&atclient);
+    atclient_atkey_free(&my_self_atkey);
+    free(value);
+    return exit_code;
+}
+}
+```
+
+### Get Shared atKey
+
+#### 1. Create a Shared atKey
+
+```c
+atclient_atkey my_shared_atkey;
+atclient_atkey_init(&my_shared_atkey);
+
+const char *atkey_key = "phone";
+const char *atkey_shared_by = "@jeremy_0";
+const char *atkey_shared_with = "@soccer0";
+const char *atkey_namespace = "c_demos";
+if (atclient_atkey_create_shared_key(&my_shared_atkey, atkey_key, atkey_shared_by, atkey_shared_with, atkey_namespace) != 0)
+{
+    // an error occurred
+}
+```
+
+#### 2. Call \`atclient\_get\_shared\_key\`
+
+We will create a variable named `value` and pass the address to it in our `atclient_get_shared_key` function call. The function will allocate memory for us and populate that variable for us.&#x20;
+
+We will pass `NULL` into the request\_options parameter because we want to use the default options for now.
+
+This function returns an `int` for error handling, in which a non-zero exit code indicates an error.
+
+```c
+char *value = NULL;
+if (atclient_get_shared_key(&atclient, &my_self_atkey, &value, NULL) != 0)
+{
+    // an error occurred
+}
+```
+
+#### 3. Free \`value\`
+
+Once we are done with the value itself, we should free it to avoid any memory leaks.
+
+```c
+free(value)
+```
+
+#### Example Application
+
+```c
+#include <atclient/atclient.h>
+#include <atclient/atclient_utils.h>
+#include <atclient/constants.h>
+#include <atlogger/atlogger.h>
+#include <stdlib.h>
+
+#define ATSIGN "@soccer99"
+
+int main()
+{
+    int exit_code = -1;
+
+    atlogger_set_logging_level(ATLOGGER_LOGGING_LEVEL_DEBUG);
+
+    char *atserver_host = NULL;
+    int atserver_port = 0;
+
+    atclient_atkeys atkeys;
+    atclient_atkeys_init(&atkeys);
+
+    atclient atclient;
+    atclient_init(&atclient);
+
+    atclient_atkey my_shared_atkey;
+    atclient_atkey_init(&my_shared_atkey);
+
+    /*
+     * Let's declare a null pointer which will later be allocated by our `atclient_get_public_key` function. It is our responsibility to free it once we are
+     * done with it.
+     */
+    char *value = NULL;
+
+    if ((exit_code = atclient_utils_find_atserver_address(ATCLIENT_ATDIRECTORY_PRODUCTION_HOST, ATCLIENT_ATDIRECTORY_PRODUCTION_PORT, ATSIGN, &atserver_host, &atserver_port)) != 0)
+    {
+        goto exit;
+    }
+
+    if ((exit_code = atclient_utils_populate_atkeys_from_homedir(&atkeys, ATSIGN)) != 0)
+    {
+        goto exit;
+    }
+
+    if ((exit_code = atclient_pkam_authenticate(&atclient, atserver_host, atserver_port, &atkeys, ATSIGN)) != 0)
+    {
+        goto exit;
+    }
+
+    const char *atkey_key = "phone";
+    const char *atkey_shared_by = ATSIGN;
+    const char *atkey_shared_with = "@soccer0";
+    const char *atkey_namespace = "c_demos";
+
+    if ((exit_code = atclient_atkey_create_shared_key(&my_shared_atkey, atkey_key, atkey_shared_by, atkey_shared_with, atkey_namespace)) != 0)
+    {
+        goto exit;
+    }
+
+    /*
+     * `atclient_get_self_key` will allocate memory for the `value` pointer. It is our responsibility to free it once we are done with it.
+     * We will pass `NULL` into the request_options argument for now and just use the default request options.
+     */
+    if ((exit_code = atclient_get_shared_key(&atclient, &my_shared_atkey, &value, NULL)) != 0)
+    {
+        goto exit;
+    }
+
+    atlogger_log("3E-get-self-atkey", ATLOGGER_LOGGING_LEVEL_INFO, "value: \"%s\"\n", value);
+
+    exit_code = 0;
+exit:
+{
+    free(atserver_host);
+    atclient_atkeys_free(&atkeys);
+    atclient_free(&atclient);
+    atclient_atkey_free(&my_shared_atkey);
+    free(value);
+    return exit_code;
+}
+}
+```
+
+### Delete an atKey
+
+#### 1. Create an AtKey
+
+First step is to create the atKey that you wish to delete. This can be of any atKey type (public, self, or shared). What is important to note is that you can only delete an atKey that you own (which means that the authenticated atSign is the same as the shared\_by atSign). This should be obvious because you can only delete atKeys that have once been created by you. Only the rightful owners of the atKey that was created can delete it.
+
+For the sake of this demo, we will create a Shared atKey.
+
+```c
+atclient_atkey my_shared_atkey;
+atclient_atkey_init(&my_shared_atkey);
+
+const char *atkey_key = "phone";
+const char *atkey_shared_by = "@jeremy_0";
+const char *atkey_shared_with = "@soccer0";
+const char *atkey_namespace = "c_demos";
+if (atclient_atkey_create_shared_key(&my_shared_atkey, atkey_key, atkey_shared_by, atkey_shared_with, atkey_namespace) != 0)
+{
+    // an error occurred
+}
+```
+
+#### 2. Call \`atclient\_delete\`
+
+`atclient_delete` will delete the atKey from your atServer.&#x20;
+
+We will pass `NULL` to the `request_options` and `commit_id` parameter because we want to use the default options for now and we do not care about the commit\_id. You can receive the commit\_id if you would like by passing an int pointer.
+
+It is pointless to set any metadata to the atKey when deleting. Metadata is only useful when getting (you can read any metadata that the key possesses) and putting (you can modify the atKey's behavior). When you are deleting, no metadata is used.
+
+This functions returns an `int` for error handling. A non-zero exit code indicates an error.
+
+```c
+if (atclient_delete(&atclient, &my_shared_atkey, NULL, NULL) != 0) {
+    // an error occurred
+}
+```
+
+#### Example Application
+
+```c
+#include <atclient/atclient.h>
+#include <atclient/atclient_utils.h>
+#include <atclient/constants.h>
+#include <atlogger/atlogger.h>
+#include <stdlib.h>
+
+#define ATSIGN "@jeremy_0"
+
+int main()
+{
+    int exit_code = -1;
+
+    atlogger_set_logging_level(ATLOGGER_LOGGING_LEVEL_DEBUG);
+
+    char *atserver_host = NULL;
+    int atserver_port = 0;
+
+    atclient_atkeys atkeys;
+    atclient_atkeys_init(&atkeys);
+
+    atclient atclient;
+    atclient_init(&atclient);
+
+    atclient_atkey my_shared_atkey;
+    atclient_atkey_init(&my_shared_atkey);
+
+    if ((exit_code = atclient_utils_find_atserver_address(ATCLIENT_ATDIRECTORY_PRODUCTION_HOST, ATCLIENT_ATDIRECTORY_PRODUCTION_PORT, ATSIGN, &atserver_host, &atserver_port)) != 0)
+    {
+        goto exit;
+    }
+
+    if ((exit_code = atclient_utils_populate_atkeys_from_homedir(&atkeys, ATSIGN)) != 0)
+    {
+        goto exit;
+    }
+
+    if ((exit_code = atclient_pkam_authenticate(&atclient, atserver_host, atserver_port, &atkeys, ATSIGN)) != 0)
+    {
+        goto exit;
+    }
+
+    const char *atkey_key = "phone";
+    const char *atkey_shared_by = ATSIGN;
+    const char *atkey_shared_with = "@soccer0";
+    const char *atkey_namespace = "c_demos";
+
+    if ((exit_code = atclient_atkey_create_shared_key(&my_shared_atkey, atkey_key, atkey_shared_by, atkey_shared_with, atkey_namespace)) != 0)
+    {
+        goto exit;
+    }
+
+    /*
+     * `atclient_delete` will delete this shared atkey from our atServer. It is important to note that only the `shared_by` atSign can delete the shared atKey
+     * When deleting, the `shared_by` atSign should always be the authenticated atSign in the `atclient` object.
+     * We will pass `NULL` to the request_options and commit_id parameters because we want to use the default request_options and we don't care about the
+     * commit_id we get back.
+     */
+    if ((exit_code = atclient_delete(&atclient, &my_shared_atkey, NULL, NULL) != 0)) {
+        goto exit;
+    }
+
+    exit_code = 0;
+exit:
+{
+    free(atserver_host);
+    atclient_atkeys_free(&atkeys);
+    atclient_free(&atclient);
+    atclient_atkey_free(&my_shared_atkey);
+    return exit_code;
+}
+}
+```
+
+### Request Options
+
+{% hint style="info" %}
+Under Construction
+{% endhint %}
+{% endtab %}
 {% endtabs %}
+
+
 
 
 
