@@ -9,6 +9,8 @@ description: Setup the atSDK for your preferred language
 ## Starter Dart App
 
 Guide coming soon!
+
+For now, please checkout our [atsdk-tutorial](../tutorials/atsdk-tutorial/ "mention")
 {% endtab %}
 
 {% tab title="Flutter" %}
@@ -425,3 +427,4 @@ Your output will look similar to:
 Congratulations! You have successfully ran a barebones Atsign C application.
 {% endtab %}
 {% endtabs %}
+
