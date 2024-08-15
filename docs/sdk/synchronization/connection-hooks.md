@@ -4,6 +4,8 @@
 {% tab title="C" %}
 ## C
 
+The full example code can be found on our [GitHub](https://github.com/atsign-foundation/at\_demos/tree/trunk/demos/get\_started\_c/5a-hooks#5a---hooks).
+
 ### Connection Hooks
 
 Connections hooks are useful for when you want to add additional control to the connection lifecycle in the atSDK. This means you as the developer can implement things like automatically reconnecting when connections drop (example below).
@@ -41,6 +43,8 @@ atclient_connection_hooks_set(&(atclient->atserver_connection), ATCLIENT_CONNECT
 ### Examples
 
 #### Print something before we write to the atServer
+
+The full example code can be found on our [GitHub](https://github.com/atsign-foundation/at\_demos/tree/trunk/demos/get\_started\_c/5a-hooks#5a---hooks).
 
 ```c
 #include <atclient/atclient.h>

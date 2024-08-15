@@ -127,6 +127,8 @@ The `AtKey` class API reference is available [here](https://pub.dev/documentatio
 {% tab title="C" %}
 ## C
 
+You can find all these examples also on our [GitHub](https://github.com/atsign-foundation/at\_demos/tree/trunk/demos/get\_started\_c).
+
 ### Introduction
 
 There are three kinds of atKeys:

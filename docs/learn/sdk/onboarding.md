@@ -121,6 +121,8 @@ Then open the Advanced settings drop down and click `Generate New API Key`:
 {% tab title="C" %}
 ## C
 
+Find the full example on our [GitHub](https://github.com/atsign-foundation/at\_demos/tree/trunk/demos/get\_started\_c/1-authentication#1---authentication).
+
 ### 1. Fetch your atServer's address from the production atDirectory
 
 First, include `atclient_utils.h` and `#include <atclient/constants.h>` at the top of you program.
@@ -238,6 +240,8 @@ atclient_free(&atclient);
 ### Example Application
 
 Here is an example application that authenticates my atSign `@jeremy_0`.
+
+This code is also available on our [GitHub](https://github.com/atsign-foundation/at\_demos/tree/trunk/demos/get\_started\_c/1-authentication#1---authentication).
 
 ```c
 #include <atclient/atclient.h>

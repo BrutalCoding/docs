@@ -60,6 +60,8 @@ await atClient.notificationService.notify(
 {% tab title="C" %}
 ## C
 
+You can find the full code of this example on our [GitHub](https://github.com/atsign-foundation/at\_demos/tree/trunk/demos/get\_started\_c/4a-monitor#4a---monitor).
+
 ### Table of Contents
 
 * [#introduction](events.md#introduction "mention")
@@ -174,6 +176,8 @@ atclient_monitor_response_free(&response);
 ```
 
 #### Example Application
+
+You can find the full code of this example on our [GitHub](https://github.com/atsign-foundation/at\_demos/tree/trunk/demos/get\_started\_c/4a-monitor#4a---monitor).
 
 ```c
 #include <atclient/atclient.h>
@@ -367,6 +371,8 @@ atclient_notify_params_free(&notify_params);
 ```
 
 #### Example Application
+
+You can find the full code of this example on our [GitHub](https://github.com/atsign-foundation/at\_demos/tree/trunk/demos/get\_started\_c/4b-notify#4b---notify).
 
 ```c
 #include <atclient/atclient.h>

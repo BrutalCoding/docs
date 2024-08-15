@@ -187,6 +187,8 @@ The `AtClient` class API reference is available [here](https://pub.dev/documenta
 {% tab title="C" %}
 ## C
 
+You can find all of these examples on our [GitHub](https://github.com/atsign-foundation/at\_demos/tree/trunk/demos/get\_started\_c).
+
 ### Table of Contents
 
 * [#introduction](crud-operations.md#introduction "mention")

@@ -238,6 +238,8 @@ Now you are ready to begin developing!
 
 Setup a CMake project which includes the atSDK package suite.
 
+The full example can be found [here](https://github.com/atsign-foundation/at\_demos/tree/trunk/demos/get\_started\_c/0-my-first-c-app).
+
 #### 1. Ensure you have a C Compiler, CMake, and a build automation tool
 
 The method at which you decide to use to install these prerequisites are up to you. These three tools can be installed using either `apt` or `pip`.
