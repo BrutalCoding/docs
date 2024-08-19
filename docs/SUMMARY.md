@@ -5,11 +5,14 @@
   * [atSign](learn/core/atsign.md)
   * [atRecord](learn/core/atrecord.md)
 * [atSDK](learn/sdk/README.md)
-  * [Onboarding](learn/sdk/onboarding.md)
+  * [Get Started](sdk/get-started.md)
+  * [Authentication](learn/sdk/onboarding.md)
   * [atKey Reference](learn/sdk/atid-reference.md)
   * [CRUD Operations](learn/sdk/crud-operations.md)
-  * [Events](learn/sdk/events.md)
-  * [Synchronization](learn/sdk/synchronization.md)
+  * [Notifications](learn/sdk/events.md)
+  * [Additional Features](sdk/synchronization/README.md)
+    * [Synchronization](sdk/synchronization/synchronization.md)
+    * [Connection Hooks](sdk/synchronization/connection-hooks.md)
 * [Infrastructure](infrastructure.md)
 
 ## 🗒️ Tutorials
@@ -22,7 +25,6 @@
   * [Send and Receive data synchronously.](tutorials/atsdk-tutorial/send-and-receive-data-synchronously.md)
   * [Remote Procedure Calls (RPC)](tutorials/atsdk-tutorial/rpc.md)
   * [atTalk - Encrypted chat client](tutorials/atsdk-tutorial/attalk.md)
-* [Starter Flutter App](tutorials/flutter-and-atsdk-app.md)
 
 ## Related pages
 
