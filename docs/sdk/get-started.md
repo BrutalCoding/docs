@@ -285,20 +285,21 @@ project(my_first_c_app)
 include(FetchContent)
 
 FetchContent_Declare(
-  atclient
-  URL https://github.com/atsign-foundation/at_c/releases/download/v0.1.0/at_c-v0.1.0.tar.gz
-  URL_HASH SHA256=494a4960dedc45484a0078db4c388cd592efdebde45e40bdded5c2b9c587b146
-  SOURCE_SUBDIR packages/atclient
+  atsdk
+  URL https://github.com/atsign-foundation/at_c/archive/refs/tags/v0.1.0.tar.gz
+  URL_HASH SHA256=7ca4215a473037ca07bef362b852291b0a1cf4e975d24d373d58ae9c1df832bc
 )
 
-FetchContent_MakeAvailable(atclient)
+FetchContent_MakeAvailable(atsdk)
 
 add_executable(main ${CMAKE_CURRENT_LIST_DIR}/main.c)
 
-target_link_libraries(main PRIVATE atclient atlogger atchops mbedtls mbedcrypto mbedx509 cjson)
+target_link_libraries(main PRIVATE atclient)
 ```
 
-#### 3. Create main.c
+The above `CMakeLists.txt` will use FetchContent to download the C atSDK for you. Then, we will create a target named `main` for you and link our `atclient` library statically.&#x20;
+
+#### 4. Create main.c
 
 Inside your project folder, create a new file called `main.c`
 
@@ -356,7 +357,7 @@ exit:
 }
 ```
 
-#### 4. CMake Configure
+#### 5. CMake Configure
 
 In the terminal, run the following command.
 
@@ -385,7 +386,7 @@ $ cmake -S . -B build
 -- Build files have been written to: /home/jeremy/GitHub/at_demos/demos/get_started_c/1-authentication/build
 ```
 
-#### 5. Build
+#### 6. Build
 
 Use CMake to build your configure and build your programs:
 
@@ -404,7 +405,7 @@ cmake --build build
 [100%] Built target main
 ```
 
-#### 6. Run the binary
+#### 7. Run the binary
 
 The previous command, if ran successfully, would have created a binary executable for you: `./build/main`.
 
